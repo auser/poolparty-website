@@ -1,12 +1,10 @@
 # Basic poolparty template
-require "#{File.dirname(__FILE__)}/cb/plugins/apache/apache"
+require "poolparty_apache2_plugin"
 
-pool :cb do
-  
+pool :cb do  
   instances 2..5
   port 80
-  ami "ami-1cd73375"
-  using :ec2
+  ami "ami-1cd73375" #Alestic's base Ubuntu AMI
   
   cloud :app do
         
@@ -15,11 +13,13 @@ pool :cb do
       
       has_virtualhost do
         
-        name "xnot.org"
+        name "poolpartyrb.com"
         listen("8080")
-        virtual_host_entry ::File.join(File.dirname(__FILE__), "cb/templates", "virtual_host.conf.erb")
+        virtual_host_entry ::File.join(File.dirname(__FILE__), "templates", "virtual_host.conf.erb")
         
-        has_git(:name => "poolpartyrepos", :source => "git://github.com/auser/xnot.org.git", :path => "/var/www/xnot.org/public")
+        has_git(:name => "poolpartyrepos", 
+          :source => "git://github.com/auser/xnot.org.git", 
+          :path => "/var/www/xnot.org/public")
         
       end
     end

@@ -1,0 +1,25 @@
+%h2 Getting started on PoolParty
+
+%p
+  Congrats! You've decided to try out PoolParty, what next? Follow along as we go from zero to done! Time it, let's see how long it takes for you to have a full-blown application up on your cloud!
+
+%h4 Installation
+%p
+  Installing poolparty is simple:
+  ~code_to_syntax("gem install auser-poolparty", "shell-unix-generic", "blackboard")
+  Make sure you have executed
+  ~code_to_syntax("gem sources --add http://gems.github.com", "shell-unix-generic", "blackboard")
+  so that rubygems can find the gem.
+
+%h4 Pool spec
+%p
+  Everything in your pool is decided by your spec file. This is where all the logic for your cloud will go. This can be generated with the command:
+  ~code_to_syntax("pool spec [name]", "shell-unix-generic", "blackboard")
+  You will now have a spec file in the location: "name/name.rb"
+%p
+  Although more advanced examples can be found throughout the site, we'll use a basic one to get us going. First, we can start out by making a pool.
+  ~file_to_code("tutorials/first_pool.rb")
+  This doesn't really do anything, but it gives us a convenient wrapper around our clouds, You don't need to define a pool, but it's usually a good idea if the clouds of nodes are going to talk to each other. 
+  Now let's make a cloud that actually does something.
+  ~file_to_code("tutorials/basic_cloud.rb")
+  
