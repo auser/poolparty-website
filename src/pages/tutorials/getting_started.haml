@@ -24,17 +24,16 @@
   ~file_to_code("tutorials/basic_cloud.rb")
   Your cloud is now setup to scale from 2 instances all the way to 500 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
 %p
-  Things get a lot more interesting when plugins get involved. Currently, as of the time of this writing there are plugins in the works to setup apache2, passenger, ruby on rails, postgresql, mysql and more. The plugin syntax is clear and enjoyable as well, so if you require something different, please checkout the (upcoming) plugin tutorial. 
+  Things get a lot more interesting when plugins get involved. Currently, as of the time of this writing there are plugins in the works to setup apache2, passenger, ruby on rails, postgresql, mysql and more. The plugin syntax is clear and enjoyable as well, so if you require something different, please checkout the
+  = link "/tutorials/Basic Plugin Tutorial"
 
-%h4 CloudSpeak
+%h4= link "/lib/Cloud Speak"
 %p
   Once you have your pool spec at a comfortable spot, it's time to get your cloud launched. 
   ~code_to_syntax("cloud start -n app", "shell-unix-generic", "blackboard")
 %p
   %ul
-    %li 
-      PoolParty will launch your master instance
-    %li 
-      Configure the master instance based on the values in your manifest
-    %li 
-      Install the appropriate software
+    %li PoolParty will launch your master instance
+    %li Configure the master instance based on the values in your manifest
+    %li Install the appropriate software
+    %li Start monitoring the cloud
