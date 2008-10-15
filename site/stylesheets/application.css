@@ -1,15 +1,10 @@
-* {
-  margin: 0;
-  padding: 0; }
-
 body {
   background: #fff;
   line-height: 1.2em;
-  margin: 1em;
+  margin: 0;
   background-color: #FFFFFF;
   font-family: Verdana;
-  font-size: 10pt;
-  line-height: 1.5em; }
+  font-size: 10pt; }
 
 pre {
   width: 640px;
