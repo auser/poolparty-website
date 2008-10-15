@@ -1,0 +1,10 @@
+body {
+  background-color: #FFFFFF;
+  font-family: Verdana;
+  font-size: 10pt; }
+
+pre {
+  width: 640px;
+  overflow: auto; }
+  pre #content {
+    width: 640px; }

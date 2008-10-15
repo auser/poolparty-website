@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>PoolParty!</title>
+    <link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/blackboard.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/classes.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/navmenu.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/structure.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <div id='masthead'>
+        <h2>CitrusByte Labs</h2>
+        <ul>
+          <li>
+            <a href='http://citrusbyte.com'>CitrusByte</a>
+          </li>
+          <li>
+            <a href='http://blog.citrusbyte.com'>Blog</a>
+          </li>
+          <li>
+            <a href='http://labs.citrusbyte.com'>Labs</a>
+          </li>
+        </ul>
+      </div>
+      <div class='spacer'>
+        &nbsp;
+      </div>
+      <div id='content'>
+        <div id='navmenu'>
+          <ul>
+            <h4>Menu</h4>
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='/docs'>Docs</a>
+            </li>
+            <li>
+              <a href='/examples'>Examples</a>
+            </li>
+            <li>
+              <a href='/community'>Community</a>
+            </li>
+            <li>
+              <a href='/tutorials'>Tutorials</a>
+            </li>
+            <li>
+              <a href='/plugins'>Plugins</a>
+            </li>
+          </ul>
+        </div>
+        <h2>Getting started on PoolParty</h2>
+        <p>
+          Congrats! You've decided to try out PoolParty, what next? Follow along as we go from zero to done! Time it, let's see how long it takes for you to have a full-blown application up on your cloud!
+        </p>
+        <h4>Installation</h4>
+        <p>
+          Installing poolparty is simple:
+          <!-- ~code_to_syntax("gem install auser-poolparty", "shell-unix-generic", "blackboard") -->
+          Make sure you have executed
+          <!-- ~code_to_syntax("gem sources --add http://gems.github.com", "shell-unix-generic", "blackboard") -->
+          so that rubygems can find the gem.
+        </p>
+        <h4>Pool spec</h4>
+        <p>
+          Everything in your pool is decided by your spec file. This is where all the logic for your cloud will go. This can be generated with the command:
+          <!-- ~code_to_syntax("pool spec [name]", "shell-unix-generic", "blackboard") -->
+          You will now have a spec file in the location: "name/name.rb"
+        </p>
+        <p>
+          Although more advanced examples can be found throughout the site, we'll use a basic one to get us going. First, we can start out by making a pool.
+          <!-- ~file_to_code("tutorials/first_pool.rb") -->
+          This doesn't really do anything, but it gives us a convenient wrapper around our clouds, You don't need to define a pool, but it's usually a good idea if the clouds of nodes are going to talk to each other.
+          Now let's make a cloud that actually does something.
+          <!-- ~file_to_code("tutorials/basic_cloud.rb") -->
+          Your cloud is now setup to scale from 2 instances all the way to 500 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
+        </p>
+        <p>
+          Things get a lot more interesting when plugins get involved. Currently, as of the time of this writing there are plugins in the works to setup apache2, passenger, ruby on rails, postgresql, mysql and more. The plugin syntax is clear and enjoyable as well, so if you require something different, please checkout the (upcoming) plugin tutorial.
+        </p>
+        <h4>CloudSpeak</h4>
+        <p>
+          Once you have your pool spec at a comfortable spot, it's time to get your cloud launched.
+          <!-- ~code_to_syntax("cloud start -n app", "shell-unix-generic", "blackboard") -->
+        </p>
+        <p>
+          <ul>
+            <li>
+              PoolParty will launch your master instance
+            </li>
+            <li>
+              Configure the master instance based on the values in your manifest
+            </li>
+            <li>
+              Install the appropriate software
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

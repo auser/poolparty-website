@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>PoolParty!</title>
+    <link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/blackboard.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/classes.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/navmenu.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/structure.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <div id='masthead'>
+        <h2>CitrusByte Labs</h2>
+        <ul>
+          <li>
+            <a href='http://citrusbyte.com'>CitrusByte</a>
+          </li>
+          <li>
+            <a href='http://blog.citrusbyte.com'>Blog</a>
+          </li>
+          <li>
+            <a href='http://labs.citrusbyte.com'>Labs</a>
+          </li>
+        </ul>
+      </div>
+      <div class='spacer'>
+        &nbsp;
+      </div>
+      <div id='content'>
+        <div id='navmenu'>
+          <ul>
+            <h4>Menu</h4>
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='/docs'>Docs</a>
+            </li>
+            <li>
+              <a href='/examples'>Examples</a>
+            </li>
+            <li>
+              <a href='/community'>Community</a>
+            </li>
+            <li>
+              <a href='/tutorials'>Tutorials</a>
+            </li>
+            <li>
+              <a href='/plugins'>Plugins</a>
+            </li>
+          </ul>
+        </div>
+        <h2>Examples</h2>
+        <p>
+          This site is maintained using the following specfile
+          <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Comment"><span class="Comment">#</span> Basic poolparty template</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Keyword">require</span> <span class="String"><span class="String">&quot;</span>poolparty_apache2_plugin<span class="String">&quot;</span></span>&#x000A;<span class="line-numbers">   3 </span> &#x000A;<span class="line-numbers">   4 </span> pool <span class="Constant"><span class="Constant">:</span>cb</span> <span class="Keyword">do  </span>&#x000A;<span class="line-numbers">   5 </span>   instances <span class="Constant">2</span>..<span class="Constant">5</span>&#x000A;<span class="line-numbers">   6 </span>   port <span class="Constant">80</span>&#x000A;<span class="line-numbers">   7 </span>   ami <span class="String"><span class="String">&quot;</span>ami-1cd73375<span class="String">&quot;</span></span> <span class="Comment"><span class="Comment">#</span>Alestic's base Ubuntu AMI</span>&#x000A;<span class="line-numbers">   8 </span>   &#x000A;<span class="line-numbers">   9 </span>   cloud <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">  10 </span>         &#x000A;<span class="line-numbers">  11 </span>     apache <span class="Keyword">do</span>&#x000A;<span class="line-numbers">  12 </span>       installed_as_worker      &#x000A;<span class="line-numbers">  13 </span>       &#x000A;<span class="line-numbers">  14 </span>       has_virtualhost <span class="Keyword">do</span>&#x000A;<span class="line-numbers">  15 </span>         &#x000A;<span class="line-numbers">  16 </span>         name <span class="String"><span class="String">&quot;</span>poolpartyrb.com<span class="String">&quot;</span></span>&#x000A;<span class="line-numbers">  17 </span>         <span class="Entity">listen</span>(<span class="String"><span class="String">&quot;</span>8080<span class="String">&quot;</span></span>)&#x000A;<span class="line-numbers">  18 </span>         virtual_host_entry ::<span class="Entity">File</span>.<span class="Entity">join</span>(<span class="Support">File</span>.<span class="Entity">dirname</span>(<span class="Variable">__FILE__</span>), <span class="String"><span class="String">&quot;</span>templates<span class="String">&quot;</span></span>, <span class="String"><span class="String">&quot;</span>virtual_host.conf.erb<span class="String">&quot;</span></span>)&#x000A;<span class="line-numbers">  19 </span>         &#x000A;<span class="line-numbers">  20 </span>         <span class="Entity">has_git</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>poolpartyrepos<span class="String">&quot;</span></span>, &#x000A;<span class="line-numbers">  21 </span>           <span class="Constant"><span class="Constant">:</span>source</span> =&gt; <span class="String"><span class="String">&quot;</span>git://github.com/auser/xnot.org.git<span class="String">&quot;</span></span>, &#x000A;<span class="line-numbers">  22 </span>           <span class="Constant"><span class="Constant">:</span>path</span> =&gt; <span class="String"><span class="String">&quot;</span>/var/www/xnot.org/public<span class="String">&quot;</span></span>)&#x000A;<span class="line-numbers">  23 </span>         &#x000A;<span class="line-numbers">  24 </span>       <span class="Keyword">end</span>&#x000A;<span class="line-numbers">  25 </span>     <span class="Keyword">end</span>&#x000A;<span class="line-numbers">  26 </span>     &#x000A;<span class="line-numbers">  27 </span>   <span class="Keyword">end</span>&#x000A;<span class="line-numbers">  28 </span> &#x000A;<span class="line-numbers">  29 </span> <span class="Keyword">end</span></pre>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

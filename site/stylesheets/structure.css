@@ -1,0 +1,49 @@
+#wrapper {
+  width: 900px;
+  background: #fff;
+  margin: 0px auto; }
+  #wrapper #masthead {
+    margin: 0px;
+    padding: 0px;
+    list-style: none; }
+    #wrapper #masthead h2 {
+      float: left; }
+    #wrapper #masthead img {
+      width: 130px; }
+    #wrapper #masthead ul {
+      width: 550px;
+      height: 32px;
+      position: absolute;
+      right: 40px;
+      margin-left: 5px;
+      z-index: 11;
+      padding: 0 10px;
+      border-bottom: 5px solid #bba; }
+      #wrapper #masthead ul li {
+        padding-right: 20px;
+        float: left;
+        background-repeat: no-repeat;
+        font-size: 11px;
+        margin-right: 7px;
+        line-height: 15px;
+        display: block;
+        height: 38px;
+        background: #ffffff url(/images/rnav.gif) no-repeat right top;
+        font-family: HelveticaNeue, "Helvetica Neue", helvetica, arial;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        text-indent: 10px;
+        letter-spacing: 1px;
+        line-height: 38px;
+        color: #00aeef;
+        float: right; }
+        #wrapper #masthead ul li a {
+          color: #333333;
+          font-weight: normal; }
+        #wrapper #masthead ul li a:hover {
+          color: #888888;
+          background-color: #333; }
+  #wrapper #content {
+    clear: both;
+    padding-top: 20px;
+    font-family: HelveticaNeue, "Helvetica Neue", helvetica, arial; }
