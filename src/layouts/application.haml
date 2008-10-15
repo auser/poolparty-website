@@ -1,7 +1,21 @@
 !!!
 %html
   %head
-    %title StaticMatic
+    %title PoolParty!
     = stylesheets
   %body
-    = yield
+    #wrapper
+      #masthead
+        %h2 CitrusByte Labs
+        %ul
+          %li
+            %a{:href => "http://citrusbyte.com"} CitrusByte
+          %li
+            %a{:href => "http://blog.citrusbyte.com"} Blog
+          %li
+            %a{:href => "http://labs.citrusbyte.com"} Labs
+      .spacer 
+        &nbsp;
+      #content
+        = partial('navmenu')
+        = yield
