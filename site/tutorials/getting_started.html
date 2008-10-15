@@ -54,23 +54,23 @@
         <h4>Installation</h4>
         <p>
           Installing poolparty is simple:
-          <!-- ~code_to_syntax("gem install auser-poolparty", "shell-unix-generic", "blackboard") -->
+          <pre class="blackboard"><span class="line-numbers">   1 </span> gem install auser-poolparty</pre>
           Make sure you have executed
-          <!-- ~code_to_syntax("gem sources --add http://gems.github.com", "shell-unix-generic", "blackboard") -->
+          <pre class="blackboard"><span class="line-numbers">   1 </span> gem sources --add http://gems.github.com</pre>
           so that rubygems can find the gem.
         </p>
         <h4>Pool spec</h4>
         <p>
           Everything in your pool is decided by your spec file. This is where all the logic for your cloud will go. This can be generated with the command:
-          <!-- ~code_to_syntax("pool spec [name]", "shell-unix-generic", "blackboard") -->
+          <pre class="blackboard"><span class="line-numbers">   1 </span> pool spec [name]</pre>
           You will now have a spec file in the location: "name/name.rb"
         </p>
         <p>
           Although more advanced examples can be found throughout the site, we'll use a basic one to get us going. First, we can start out by making a pool.
-          <!-- ~file_to_code("tutorials/first_pool.rb") -->
+          <pre class="blackboard"><span class="line-numbers">   1 </span> pool <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Keyword">end</span></pre>
           This doesn't really do anything, but it gives us a convenient wrapper around our clouds, You don't need to define a pool, but it's usually a good idea if the clouds of nodes are going to talk to each other.
           Now let's make a cloud that actually does something.
-          <!-- ~file_to_code("tutorials/basic_cloud.rb") -->
+          <pre class="blackboard"><span class="line-numbers">   1 </span> pool <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span>   &#x000A;<span class="line-numbers">   3 </span>   instances <span class="Constant">2</span>..<span class="Constant">500</span>&#x000A;<span class="line-numbers">   4 </span>   &#x000A;<span class="line-numbers">   5 </span>   cloud <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   6 </span>   <span class="Keyword">end</span>&#x000A;<span class="line-numbers">   7 </span>   &#x000A;<span class="line-numbers">   8 </span> <span class="Keyword">end</span></pre>
           Your cloud is now setup to scale from 2 instances all the way to 500 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
         </p>
         <p>
@@ -79,7 +79,7 @@
         <h4>CloudSpeak</h4>
         <p>
           Once you have your pool spec at a comfortable spot, it's time to get your cloud launched.
-          <!-- ~code_to_syntax("cloud start -n app", "shell-unix-generic", "blackboard") -->
+          <pre class="blackboard"><span class="line-numbers">   1 </span> cloud start -n app</pre>
         </p>
         <p>
           <ul>

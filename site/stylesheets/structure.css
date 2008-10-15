@@ -1,7 +1,8 @@
 #wrapper {
   width: 900px;
   background: #fff;
-  margin: 0px auto; }
+  margin: 0px auto;
+  padding: 5px; }
   #wrapper #masthead {
     margin: 0px;
     padding: 0px;
