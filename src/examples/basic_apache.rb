@@ -11,16 +11,20 @@ pool :cb do
     apache do
       installed_as_worker      
       
-      has_virtualhost do
-        
+      has_virtualhost do        
         name "poolpartyrb.com"
         listen("8080")
-        virtual_host_entry ::File.join(File.dirname(__FILE__), "templates", "virtual_host.conf.erb")
+        virtual_host_entry ::File.join(File.dirname(__FILE__), "cb/templates", "virtual_host.conf.erb")
         
-        has_git(:name => "poolpartyrepos", 
-          :source => "git://github.com/auser/xnot.org.git", 
-          :path => "/var/www/xnot.org/public")
+        # We are going to have a repository that is updated across the servers
+        has_git({:name => "poolpartyrepos", 
+          :source => "git://github.com/auser/poolparty-website.git", 
+          :path => "/var/www/poolpartyrb.com/repos"})
         
+        # We don't keep the site in the top level of the repos, so let's create
+        # a symlink so that the public directory is a symlink of the root level
+        # site directory
+        has_symlink({:name => "/var/www/poolpartyrb.com/public", :from => "/var/www/poolpartyrb.com/repos/site"})        
       end
     end
     
