@@ -1,4 +1,25 @@
 %h2 Basic plugin tutorial
 
-%p 
-  Coming soon
+%p
+  Plugins provide the meat of PoolParty's functionality. We'll dive a little bit into the process of plugin development. They are intended on being very easy and fun to write, so with no further ado...
+  
+%h3 First steps
+%p
+  You have a bunch of resources (unlimited amount considering you can create your own, but that's out of the scope for this tutorial) at your disposal to use on your server. These are described more in-depth
+  = link "here", "../lib/Resources"
+  %small.note Thanks to benburkert, a plugin generator is in progress!
+
+%p
+  The structure of a gem is standard and should look like
+  ~dir_to_syntax({:plugin_name => {:files => ["plugin_name.rb"], :dirs => {:spec => {:files => %w(spec_helper.rb plugin_name_spec.rb)}}}})
+  The spec_helper will be generated for you or looks something like:
+  
+  ~file_to_code("tutorials/spec_helper.rb")
+  
+  Of course, you can write your own helpers in here to help out with your specs as well.
+
+%p
+  Now it's time to start writing some plugin functionality, of course after you have spec'd the functionality you want in your spec file.
+
+%p
+  We'll write a plugin to 

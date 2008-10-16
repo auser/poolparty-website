@@ -7,4 +7,16 @@ module CodeHelper
   def code_to_syntax(code="", language="ruby", theme="blackboard")
      Uv.parse(code, 'xhtml', language, true, theme)
   end
+  def dir_to_tabs(dir_hash={}, prev="  ", language="shell-unix-generic", theme="blackboard")
+    out = ""
+    dir_hash.map do |name, vars|
+      out << "#{prev}#{name}/\n"
+      out << "#{prev*2}#{vars[:files].join("\n#{prev*2}")}\n" if vars[:files]
+      out << dir_to_tabs(vars[:dirs], prev*2, language, theme) if vars[:dirs]
+    end
+    out
+  end
+  def dir_to_syntax(dir_hash={}, language="shell-unix-generic", theme="blackboard")
+    code_to_syntax(dir_to_tabs(dir_hash), language, theme)
+  end
 end
