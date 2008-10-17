@@ -20,30 +20,30 @@
       <div class='spacer'>
         &nbsp;
       </div>
+      <div id='sidebar'>
+        <ul>
+          <h4>Menu</h4>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="../docs.html">Docs</a>
+          </li>
+          <li>
+            <a href="../examples.html">Examples</a>
+          </li>
+          <li>
+            <a href="../community.html">Community</a>
+          </li>
+          <li>
+            <a href="../tutorials.html">Tutorials</a>
+          </li>
+          <li>
+            <a href="../plugins.html">Plugins</a>
+          </li>
+        </ul>
+      </div>
       <div id='content'>
-        <div id='navmenu'>
-          <ul>
-            <h4>Menu</h4>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="../docs.html">Docs</a>
-            </li>
-            <li>
-              <a href="../examples.html">Examples</a>
-            </li>
-            <li>
-              <a href="../community.html">Community</a>
-            </li>
-            <li>
-              <a href="../tutorials.html">Tutorials</a>
-            </li>
-            <li>
-              <a href="../plugins.html">Plugins</a>
-            </li>
-          </ul>
-        </div>
         <h2>Getting started on PoolParty</h2>
         <p>
           Congrats! You've decided to try out PoolParty, what next? Follow along as we go from zero to done! Time it, let's see how long it takes for you to have a full-blown application up on your cloud!
@@ -67,8 +67,18 @@
           <pre class="blackboard"><span class="line-numbers">   1 </span> pool <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Keyword">end</span></pre>
           This doesn't really do anything, but it gives us a convenient wrapper around our clouds, You don't need to define a pool, but it's usually a good idea if the clouds of nodes are going to talk to each other.
           Now let's make a cloud that actually does something.
-          <pre class="blackboard"><span class="line-numbers">   1 </span> pool <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span>   &#x000A;<span class="line-numbers">   3 </span>   instances <span class="Constant">2</span>..<span class="Constant">500</span>&#x000A;<span class="line-numbers">   4 </span>   &#x000A;<span class="line-numbers">   5 </span>   cloud <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   6 </span>   <span class="Keyword">end</span>&#x000A;<span class="line-numbers">   7 </span>   &#x000A;<span class="line-numbers">   8 </span> <span class="Keyword">end</span></pre>
-          Your cloud is now setup to scale from 2 instances all the way to 500 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
+          <pre class="blackboard"><span class="line-numbers">   1 </span> pool <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span>   &#x000A;<span class="line-numbers">   3 </span>   instances <span class="Constant">2</span>..<span class="Constant">20</span>&#x000A;<span class="line-numbers">   4 </span>   &#x000A;<span class="line-numbers">   5 </span>   cloud <span class="Constant"><span class="Constant">:</span>app</span> <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   6 </span>   <span class="Keyword">end</span>&#x000A;<span class="line-numbers">   7 </span>   &#x000A;<span class="line-numbers">   8 </span> <span class="Keyword">end</span></pre>
+          Your cloud is now setup to scale from 2 instances all the way to 20 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
+        </p>
+        <p>
+          From within this cloud block is where you describe your server setup. You there are a few built-in
+          <a href="../lib/resources.html">Resources</a>
+          that you can describe here, for instance for a git repository
+          <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_git</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>repos<span class="String">&quot;</span></span>, <span class="Constant"><span class="Constant">:</span>source</span> =&gt; <span class="String"><span class="String">&quot;</span>git://...<span class="String">&quot;</span></span>)</pre>
+          or a file
+          <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_file</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>/var/www/index.html<span class="String">&quot;</span></span>, <span class="Constant"><span class="Constant">:</span>content</span> =&gt; <span class="String"><span class="String">&quot;</span>&lt;h2&gt;Hello world&lt;/h2&gt;<span class="String">&quot;</span></span>)</pre>
+          The full list can be found
+          <a href="../lib/resources.html">Resources</a>
         </p>
         <p>
           Things get a lot more interesting when plugins get involved. Currently, as of the time of this writing there are plugins in the works to setup apache2, passenger, ruby on rails, postgresql, mysql and more. The plugin syntax is clear and enjoyable as well, so if you require something different, please checkout the
@@ -87,6 +97,14 @@
             <li>Start monitoring the cloud</li>
           </ul>
         </p>
+        <p>
+          PoolParty sets up a lightweight communication network and handles the provisioning and load balancing. The master instance is the main connection between your cloud and the rest of the world. Heartbeat is automatically setup on your cloud so in case your master instance goes down, your cloud will automatically recover itself.
+        </p>
+      </div>
+      <div id='footer'>
+        Copyright 2007 - Ari Lerner
+        <br />
+        <a href='http://citrusbyte.com'>CitrusByte</a>
       </div>
     </div>
   </body>

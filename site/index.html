@@ -20,48 +20,79 @@
       <div class='spacer'>
         &nbsp;
       </div>
+      <div id='sidebar'>
+        <ul>
+          <h4>Menu</h4>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="docs.html">Docs</a>
+          </li>
+          <li>
+            <a href="examples.html">Examples</a>
+          </li>
+          <li>
+            <a href="community.html">Community</a>
+          </li>
+          <li>
+            <a href="tutorials.html">Tutorials</a>
+          </li>
+          <li>
+            <a href="plugins.html">Plugins</a>
+          </li>
+        </ul>
+      </div>
       <div id='content'>
-        <div id='navmenu'>
-          <ul>
-            <h4>Menu</h4>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="docs.html">Docs</a>
-            </li>
-            <li>
-              <a href="examples.html">Examples</a>
-            </li>
-            <li>
-              <a href="community.html">Community</a>
-            </li>
-            <li>
-              <a href="tutorials.html">Tutorials</a>
-            </li>
-            <li>
-              <a href="plugins.html">Plugins</a>
-            </li>
-          </ul>
-        </div>
         <h2>PoolParty!</h2>
         <p class='intro'>
           PoolParty makes it easy to use the power of cloud computing to power your application. PoolParty enables you to create web applications running on cloud computing services such as Amazon EC2 with built-in scaling, monitoring, load-balancing and much more.
         </p>
-        <p class='puppet'>
-          At PoolParty's core is
-          <a href='http://reductivelabs.com/trac/puppet/'>Puppet,</a>
-          a highly scalable, robust open-source systems administration framework. It's powerful enough for google to be using it, why shouldn't you?
+        <div class='block'>
+          <h3>Simple, easy configuration</h3>
+          <p>A single-file poolspec configuration file allows you to verbosely describes exactly how your cloud should be setup.</p>
+        </div>
+        <div class='block'>
+          <h3>Extensible, extendable and plug-and-play</h3>
+          <p>PoolParty helps you build your cloud the way you want and gives you the ability to easily extend it to include your own requirements and software.</p>
+        </div>
+        <div class='block'>
+          <h3>Inline integration</h3>
+          <p>PoolParty integrates well with the tools you already know well and work with. No need to change workflow or</p>
+        </div>
+        <div class='clear'></div>
+        <div class='desc'>
+          <p class='development'>
+            PoolParty makes it easy to develop against as well. With git-style commands, easy configuration files, generators and more, you have no excuse to not try it out! It's so simple!
+          </p>
+          <p class='puppet'>
+            At PoolParty's core is
+            <a href='http://reductivelabs.com/trac/puppet/'>Puppet,</a>
+            a highly scalable, robust open-source systems administration framework. It's powerful enough for google to be using it, why shouldn't you?
+          </p>
+          <p class='extensible'>
+            Built from the ground-up to be highly extensible, PoolParty makes it easy to add features if what you need is not already built in.
+          </p>
+          <p class='clear'>
+            <img alt="Tasty syntax 2" src="images/tasty_syntax_2.png"/>
+            <img alt="Tasty syntax 4" src="images/tasty_syntax_4.png"/>
+            <img alt="Tasty syntax 3" src="images/tasty_syntax_3.png"/>
+            <img alt="Tasty syntax 1" src="images/tasty_syntax_1.png"/>
+          </p>
+        </div>
+        <p class='technologies clear'>
+          PoolParty uses
+          <a href='http://haproxy.1wt.eu/'>Haproxy</a>
+          and the
+          <a href='http://www.linux-ha.org/'>Linux High Availability's</a>
+          <a href='http://www.linux-ha.org/Heartbeat'>Heartbeat</a>
+          to manage the load-balancing and failover safety. It's extensible load monitoring system is written in the highly-scalable language erlang to give your instances maximum connectivity to your cloud.
         </p>
-        <p class='extensible'>
-          Built from the ground-up to be highly extensible, PoolParty makes it easy to add features if what you need is not built in.
-        </p>
-        <p class='technologies'>
-          PoolParty uses the Linux High Availability's Haproxy and Heartbeat to manage the load-balancing and failover safety. It's extensible load monitoring system is written in the highly-scalable language erlang to give your instances maximum connectivity to your cloud.
-        </p>
-        <p class='development'>
-          PoolParty makes it easy to develop against as well. With git-style commands, easy configuration files, generators and more, you have no excuse to not try it out! It's so simple!
-        </p>
+      </div>
+      <div id='footer'>
+        Copyright 2007 - Ari Lerner
+        <br />
+        <a href='http://citrusbyte.com'>CitrusByte</a>
       </div>
     </div>
   </body>

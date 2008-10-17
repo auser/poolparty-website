@@ -44,6 +44,28 @@
           color: #888888;
           background-color: #333; }
   #wrapper #content {
-    clear: both;
+    float: left;
+    width: 690px;
+    margin-right: 5px;
     padding-top: 20px;
+    padding-right: 10px;
     font-family: HelveticaNeue, "Helvetica Neue", helvetica, arial; }
+    #wrapper #content .desc img {
+      width: 160px;
+      float: left;
+      margin: 5px; }
+    #wrapper #content .block {
+      width: 200px;
+      float: left;
+      margin: 10px 5px;
+      padding: 5px 10px; }
+  #wrapper #footer {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    clear: both;
+    font-size: 75%;
+    letter-spacing: 0.1em;
+    margin: 30px 0 15px 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 5px 0; }

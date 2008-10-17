@@ -1,18 +1,41 @@
 %h2 PoolParty!
 
 %p.intro
-  PoolParty makes it easy to use the power of cloud computing to power your application. PoolParty enables you to create web applications running on cloud computing services such as Amazon EC2 with built-in scaling, monitoring, load-balancing and much more. 
-  
-%p.puppet
-  At PoolParty's core is 
-  %a{:href => "http://reductivelabs.com/trac/puppet/"} Puppet, 
-  a highly scalable, robust open-source systems administration framework. It's powerful enough for google to be using it, why shouldn't you?
-  
-%p.extensible
-  Built from the ground-up to be highly extensible, PoolParty makes it easy to add features if what you need is not built in.
+  PoolParty makes it easy to use the power of cloud computing to power your application. PoolParty enables you to create web applications running on cloud computing services such as Amazon EC2 with built-in scaling, monitoring, load-balancing and much more.
 
-%p.technologies
-  PoolParty uses the Linux High Availability's Haproxy and Heartbeat to manage the load-balancing and failover safety. It's extensible load monitoring system is written in the highly-scalable language erlang to give your instances maximum connectivity to your cloud.
+%div.block
+  %h3 Simple, easy configuration
+  %p A single-file poolspec configuration file allows you to verbosely describes exactly how your cloud should be setup.
 
-%p.development
-  PoolParty makes it easy to develop against as well. With git-style commands, easy configuration files, generators and more, you have no excuse to not try it out! It's so simple!
+%div.block
+  %h3 Extensible, extendable and plug-and-play
+  %p PoolParty helps you build your cloud the way you want and gives you the ability to easily extend it to include your own requirements and software. 
+
+%div.block
+  %h3 Inline integration
+  %p PoolParty integrates well with the tools you already know well and work with. No need to change workflow or
+
+.clear
+
+.desc
+  %p.development
+    PoolParty makes it easy to develop against as well. With git-style commands, easy configuration files, generators and more, you have no excuse to not try it out! It's so simple!
+    
+  %p.puppet
+    At PoolParty's core is 
+    %a{:href => "http://reductivelabs.com/trac/puppet/"} Puppet, 
+    a highly scalable, robust open-source systems administration framework. It's powerful enough for google to be using it, why shouldn't you?    
+  %p.extensible
+    Built from the ground-up to be highly extensible, PoolParty makes it easy to add features if what you need is not already built in.
+  %p.clear
+    =img "tasty_syntax_2.png"
+    =img "tasty_syntax_4.png"
+    =img "tasty_syntax_3.png"
+    =img "tasty_syntax_1.png"
+%p.technologies.clear
+  PoolParty uses
+  %a{:href => "http://haproxy.1wt.eu/"} Haproxy 
+  and the
+  %a{:href => "http://www.linux-ha.org/"} Linux High Availability's   
+  %a{:href => "http://www.linux-ha.org/Heartbeat"} Heartbeat 
+  to manage the load-balancing and failover safety. It's extensible load monitoring system is written in the highly-scalable language erlang to give your instances maximum connectivity to your cloud.

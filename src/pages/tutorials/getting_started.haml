@@ -22,7 +22,16 @@
   This doesn't really do anything, but it gives us a convenient wrapper around our clouds, You don't need to define a pool, but it's usually a good idea if the clouds of nodes are going to talk to each other. 
   Now let's make a cloud that actually does something.
   ~file_to_code("tutorials/basic_cloud.rb")
-  Your cloud is now setup to scale from 2 instances all the way to 500 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
+  Your cloud is now setup to scale from 2 instances all the way to 20 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
+%p
+  From within this cloud block is where you describe your server setup. You there are a few built-in
+  = link "../lib/Resources"
+  that you can describe here, for instance for a git repository
+  ~code_to_syntax('has_git(:name => "repos", :source => "git://...")')
+  or a file
+  ~code_to_syntax('has_file(:name => "/var/www/index.html", :content => "<h2>Hello world</h2>")')
+  The full list can be found
+  = link "../lib/Resources"
 %p
   Things get a lot more interesting when plugins get involved. Currently, as of the time of this writing there are plugins in the works to setup apache2, passenger, ruby on rails, postgresql, mysql and more. The plugin syntax is clear and enjoyable as well, so if you require something different, please checkout the
   = link "/tutorials/Basic Plugin Tutorial"
@@ -37,3 +46,6 @@
     %li Configure the master instance based on the values in your manifest
     %li Install the appropriate software
     %li Start monitoring the cloud
+
+%p
+  PoolParty sets up a lightweight communication network and handles the provisioning and load balancing. The master instance is the main connection between your cloud and the rest of the world. Heartbeat is automatically setup on your cloud so in case your master instance goes down, your cloud will automatically recover itself.
