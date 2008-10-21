@@ -1,0 +1,40 @@
+#masthead {
+  margin: 0;
+  background-color: #011001;
+  width: 100px;
+  line-height: 34px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2; }
+  #masthead h2 {
+    margin: 0 70px;
+    height: 62px;
+    text-indent: -1000px;
+    background-image: url("/images/site/logo.gif");
+    background-repeat: no-repeat; }
+  #masthead #external_links {
+    display: inline;
+    position: absolute;
+    right: 280px;
+    top: 0; }
+    #masthead #external_links ul {
+      margin: 0;
+      padding: 0;
+      display: inline;
+      height: 32px; }
+      #masthead #external_links ul li {
+        padding-right: 20px;
+        margin-right: 7px;
+        display: inline;
+        margin-right: 10px;
+        list-style: none;
+        text-transform: uppercase;
+        padding-left: 28px; }
+      #masthead #external_links ul a {
+        color: #ffeeef;
+        text-decoration: none;
+        font-family: Arial; }

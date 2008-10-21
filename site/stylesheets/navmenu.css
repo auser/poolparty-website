@@ -1,20 +1,32 @@
 #sidebar {
-  width: 190px;
-  float: right; }
+  position: relative;
+  left: 0;
+  width: 100%;
+  font-family: Arial;
+  margin-top: 70px; }
   #sidebar h4 {
-    border-bottom: 1px solid #333; }
+    margin: 0;
+    padding: 0;
+    background: url(/images/site/clouds.png) no-repeat;
+    height: 44px;
+    padding-left: 100px;
+    padding-top: 8px;
+    font-size: 1.9em;
+    color: #00004F; }
   #sidebar ul {
+    position: absolute;
+    right: 10px;
+    top: 10px;
     margin: 0;
     padding: 0;
     list-style-type: none; }
     #sidebar ul li {
+      display: inline;
       height: 20px;
       padding: 2px 10px;
       margin: 2px 0;
-      background-color: #abbeec; }
+      font-size: 1.6em;
+      text-align: right;
+      width: 400px; }
       #sidebar ul li a {
-        color: #333; }
-      #sidebar ul li a:hover {
-        color: #FFF; }
-        #sidebar ul li a:hover background {
-          color: #FFF; }
+        color: #000043; }

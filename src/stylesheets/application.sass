@@ -1,36 +1,45 @@
 body
-  background: #fff
-  line-height: 1.2em
-  margin: 0
-  :background
-    color: #FFFFFF
-  :font
-    :family Verdana
-    :size 10pt
-pre
-  width: 640px
-  overflow: auto
-  
-.binary_list
-  ul
-    list-style-type: none
-    margin: 0
-    padding: 0
-    li
-      padding: 10px
-        :left 10px
-    div
-      :hover
-        background:
-          color: #ccb
-        width: 80px
-    div.title
-      border:
-        right: 1px solid #333
-        bottom: 1px solid #333
-      padding-right: 11px
-      width: 80px
-      display: inline
-    div.desc
-      padding-left: 10px
-      display: inline
+  margin: 0 
+  padding: 0
+  font-size: 62.5%
+  font-family: Georgia, georgia, "Times New Roman", Times, serif
+  background: url(/images/site/bg_body.gif) repeat-x #f3ecc4
+  color: #646451
+  position: relative
+  a
+    text-decoration: none
+  #wrapper
+    background: #fff
+    margin: 0px auto
+    width: 850px
+    border: 
+      right: 1px solid #aaa
+    #content
+      width: 810px
+      margin: 
+        top: 10px
+      padding: 10px 20px      
+      font:
+        :family helvetica, Arial
+      .desc
+        img
+          width: 160px
+          float: left
+          margin: 15px
+          border: 1px solid #333
+          padding: 5px
+      .block
+        width: 170px
+        float: left
+        margin: 10px 5px
+        padding: 5px 10px
+    #footer
+      border-top: 1px solid #ccc
+      border-bottom: 1px solid #ccc
+      clear: both
+      font-size: 0.9em
+      letter-spacing: 0.1em
+      margin: 30px 0 15px 0
+      width: 100%
+      text-align: center
+      padding: 10px 0 5px 0
