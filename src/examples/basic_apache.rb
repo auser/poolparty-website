@@ -19,12 +19,13 @@ pool :cb do
         # We are going to have a repository that is updated across the servers
         has_git({:name => "poolpartyrepos", 
           :source => "git://github.com/auser/poolparty-website.git", 
-          :path => "/var/www/poolpartyrb.com/repos"})
+          :cwd => "/var/www/poolpartyrb.com"}) do
         
-        # We don't keep the site in the top level of the repos, so let's create
-        # a symlink so that the public directory is a symlink of the root level
-        # site directory
-        has_symlink({:name => "/var/www/poolpartyrb.com/public", :from => "/var/www/poolpartyrb.com/repos/site"})        
+          # We don't keep the site in the top level of the repos, so let's create
+          # a symlink so that the public directory is a symlink of the root level
+          # site directory
+          has_symlink({:name => "/var/www/poolpartyrb.com/public", :from => "/var/www/poolpartyrb.com/repos/site"})
+        end
       end
     end
     

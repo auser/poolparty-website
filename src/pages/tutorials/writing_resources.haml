@@ -1,0 +1,50 @@
+%h3 Writing custom resources
+
+%p
+  Resources are the basis for PoolParty. These are what allows you to configure your system... but has_file and has_package just don't cut it for your needs... did you know that you can write your own? It's true!
+
+%h3 Virtual Resources
+
+%p
+  PoolParty allows you to create "virtual" resources to extend the resources to... well, whatever you need! For this tutorial, I'll walk you through creating a git resource (built in to the PoolParty resources as a virtual resource).
+  
+%p.note
+  Nore: The only difference between a virtual resource and a built-in resource is that virtual resources only encapsulate data, they do not define data.
+
+%p
+  Let's first create the virtual resource.
+  ~file_to_code("tutorials/resources/plain_resource.rb")
+  That's it! We've created a very boring resource called git. Let's actually add something to this.
+
+%p
+  Here is nearly the git resource (a few things changed for clarity-sake) that is baked into PoolParty
+  ~file_to_code("tutorials/resources/complete_git_resource.rb")
+%p
+  Wow, that's a lot, right? Don't worry, it's not too daunting, let's go through it.
+
+%p
+  Obviously we have a virtual resource as we defined from above. When a resources is loaded from within a poolspec, a few things initialize before to set it up, the final phase of the process is that it calls the callback.
+  ~code_to_syntax("loaded(opts, parent)")
+  This is how we'll jump on the back of the resource and attach what we need to get get our resource written. So, from above, it says we'll attach a few execs (called from has_git_repos after loaded is called).
+
+%p
+  From within our git resource, we want to make sure we have two commands, one to clone the repository and another to update the repos.
+  ~file_to_code("tutorials/resources/execs_for_git.rb")
+  Even though it looks a little daunting, it's not nearly as bad as it looks. Basically, we are setting up a command that will clone and create the directory if it doesn't already exist. (cwd/.git, because the command creates that on clone). If it does exist, then it doesn't run the command. One nuance to notice here is that when we are calling methods from within the resource that we want access outside the resource for, we have to call it on the parent. Otherwise, we'd have the values for the resource (unless they are not set on the resource, and only on the parent).
+
+%p
+  Note that resources in PoolParty are nested, so that if you nest a resource from within another resource, it will require that the parent resource exists to run the child one. So in this instance, it requires that the repos exists before it calls the update on it.
+%p
+  Finally, we have to set a few quick notes for resourcing. When you do nest a resource, it needs to know how to call the resource. Thus, we have to set the parent class_type_name so that the child knows how to call the resource on it.
+%p
+  Lastly, for clarity sake (this is not necessary), we can change the key so that the names are specific to the resource call. For this instance, I like to prepend it with git-[name]. That way I know where the resource is called from.
+
+%h3 Usage
+%p
+  How do we use this new resource? Well, first make sure it's either a part of a plugin or you require it at the top of your file and then call it with a has_ or does_not_have_ call. For example:
+  ~code_to_syntax("has_git(:name => 'mygitrepos', :source => 'git://...)")
+%p
+  If you have any questions, comments or suggestions, don't hesitate to ask by 
+  =link "contacting me", "mailto:ari.lerner@citrusbyte.com"
+  or checking in with other developers.
+  =link "Community"
