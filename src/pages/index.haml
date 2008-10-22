@@ -1,6 +1,14 @@
 %p.intro
   PoolParty makes it easy to use the power of cloud computing to power your application. PoolParty enables you to create web applications running on cloud computing services such as Amazon EC2 with built-in scaling, monitoring, load-balancing and much more.
 
+.desc
+  %p.clear
+    %a{:href => "http://github.com/auser/poolparty-apache2-plugin/tree/master", :name => "Apache plugin"}=img "tasty_syntax_2.png"
+    %a{:href => "http://github.com/auser/poolparty/tree/master/lib/poolparty/base_packages/haproxy.rb", :name => "Haproxy Packages"}=img "tasty_syntax_4.png"
+    %a{:href => "http://reductivelabs.com/trac/puppet", :name => "Puppet base"}=img "tasty_syntax_3.png"
+    %a{:href => "http://github.com/auser/poolparty/tree/master/lib/poolparty/net/remote_bases/ec2.rb", :name => "Remoter base"}=img "tasty_syntax_1.png"
+
+
 %div.block
   %h3 Simple, easy configuration
   %p A single-file poolspec configuration file allows you to verbosely describes exactly how your cloud should be setup.
@@ -17,8 +25,6 @@
   %h3 Inline integration
   %p PoolParty integrates well with the tools you already know well and work with. No need to change workflow. Simply plug in and go.
 
-.clear
-
 .left
   .desc
     %p.development
@@ -30,11 +36,6 @@
       a highly scalable, robust open-source systems administration framework. It's powerful enough for Google to be using it, why shouldn't you?    
     %p.extensible
       Built from the ground-up to be highly extensible, PoolParty makes it easy to add features if what you need is not already built in.
-    %p.clear
-      %a{:href => "http://github.com/auser/poolparty-apache2-plugin/tree/master", :name => "Apache plugin"}=img "tasty_syntax_2.png"
-      %a{:href => "http://github.com/auser/poolparty/tree/master/lib/poolparty/base_packages/haproxy.rb", :name => "Haproxy Packages"}=img "tasty_syntax_4.png"
-      %a{:href => "http://reductivelabs.com/trac/puppet", :name => "Puppet base"}=img "tasty_syntax_3.png"
-      %a{:href => "http://github.com/auser/poolparty/tree/master/lib/poolparty/net/remote_bases/ec2.rb", :name => "Remoter base"}=img "tasty_syntax_1.png"
   %p.technologies.clear
     PoolParty uses
     %a{:href => "http://haproxy.1wt.eu/"} Haproxy 
