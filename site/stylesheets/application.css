@@ -1,22 +1,23 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 62.5%;
-  font-family: Georgia, georgia, "Times New Roman", Times, serif;
-  background: url(/images/site/bg_body.gif) repeat-x #f3ecc4;
+  font-size: 65.5%;
+  font-family: Arial;
+  background: url(/images/site/mainbg5.png) repeat-x #F7D2A8;
   color: #646451;
   position: relative; }
   body a {
     text-decoration: none; }
   body #wrapper {
     background: #fff;
-    margin: 0px auto;
+    margin: 100px auto;
     width: 850px;
-    border-right: 1px solid #aaa; }
+    position: relative; }
     body #wrapper #content {
       width: 810px;
-      margin-top: 10px;
+      margin-top: 30px;
       padding: 10px 20px;
+      font-size: 1.4em;
       font-family: helvetica, Arial; }
       body #wrapper #content .desc img {
         width: 160px;

@@ -1,32 +1,45 @@
 #sidebar {
-  position: relative;
-  left: 0;
-  width: 100%;
-  font-family: Arial;
-  margin-top: 70px; }
-  #sidebar h4 {
+  font-family: Helvetica, sans-serif;
+  margin-top: 20px; }
+  #sidebar h3 {
     margin: 0;
-    padding: 0;
-    background: url(/images/site/clouds.png) no-repeat;
-    height: 44px;
-    padding-left: 100px;
-    padding-top: 8px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 0;
+    padding-top: 20px;
     font-size: 1.9em;
-    color: #00004F; }
+    color: #00004F;
+    float: left; }
+  #sidebar h4 {
+    padding: 0;
+    margin-top: 20px;
+    color: #888aaa;
+    font-size: 1.7em; }
   #sidebar ul {
-    position: absolute;
-    right: 10px;
-    top: 10px;
     margin: 0;
     padding: 0;
-    list-style-type: none; }
+    list-style-type: none;
+    height: 82px;
+    width: 180px; }
     #sidebar ul li {
-      display: inline;
-      height: 20px;
+      width: 45px;
+      height: 45px;
+      line-height: 1.8em;
       padding: 2px 10px;
-      margin: 2px 0;
-      font-size: 1.6em;
-      text-align: right;
-      width: 400px; }
+      padding-left: 35px;
+      font-size: 2.1em;
+      text-align: right; }
       #sidebar ul li a {
         color: #000043; }
+    #sidebar ul .home {
+      background: url("/images/site/i/home.png") no-repeat; }
+    #sidebar ul .docs {
+      background: url("/images/site/i/docs.png") no-repeat; }
+    #sidebar ul .examples {
+      background: url("/images/site/i/examples.png") no-repeat; }
+    #sidebar ul .community {
+      background: url("/images/site/i/community.png") no-repeat; }
+    #sidebar ul .tutorials {
+      background: url("/images/site/i/tutorials.png") no-repeat; }
+    #sidebar ul .plugins {
+      background: url("/images/site/i/plugins.png") no-repeat; }
