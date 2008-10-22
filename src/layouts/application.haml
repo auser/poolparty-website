@@ -7,10 +7,12 @@
     #wrapper
       #masthead
         =partial('header')
-      .spacer 
+      .spacer.clear
         &nbsp;
       #sidebar
         = partial('sidebar')
+      .spacer.clear
+        &nbsp;
       #content
         = yield
       #footer
