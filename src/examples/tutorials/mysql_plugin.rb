@@ -26,7 +26,7 @@ module PoolParty
       
       # Allow us to set a password
       def password(pass="default_poolparty_password")
-        has_variable(:name => "password", :valud => pass)
+        has_variable(:name => "password", :value => pass)
       end
       
     end

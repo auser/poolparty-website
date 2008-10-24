@@ -9,10 +9,10 @@ body {
   body a {
     text-decoration: none; }
   body #wrapper {
-    background: #fff;
     margin: 100px auto;
     width: 850px;
-    position: relative; }
+    position: relative;
+    background-color: #fff; }
     body #wrapper #content {
       width: 810px;
       margin-top: 30px;
