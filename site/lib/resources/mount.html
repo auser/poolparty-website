@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>PoolParty!</title>
+    <link href="../../stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/blackboard.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/classes.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/header.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/navmenu.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <div id='masthead'>
+        <h2>CitrusByte Labs</h2>
+        <div id='external_links'>
+          <!-- =link (img("/images/site/logo.gif"), "http://citrusbyte.com") -->
+        </div>
+      </div>
+      <div class='spacer clear'>
+        &nbsp;
+      </div>
+      <div id='sidebar'>
+        <h3><a href="/"><img alt="Pplogo2" src="/images/site/pplogo2.png"/></a></h3>
+        <ul class='left'>
+          <li class='home'>
+            <a href="/">Home</a>
+          </li>
+          <li class='docs'>
+            <a href="../../docs.html">Docs</a>
+          </li>
+          <li class='examples'>
+            <a href="../../examples.html">Examples</a>
+          </li>
+        </ul>
+        <ul class='left'>
+          <li class='community'>
+            <a href="../../community.html">Community</a>
+          </li>
+          <li class='tutorials'>
+            <a href="../../tutorials.html">Tutorials</a>
+          </li>
+          <li class='plugins'>
+            <a href="../../plugins.html">Plugins</a>
+          </li>
+        </ul>
+      </div>
+      <div class='spacer clear'>
+        &nbsp;
+      </div>
+      <div id='content'>
+        <div class='small right'>
+          <a href="../../lib/resources"><< Back to resources</a>
+        </div>
+        <h3>Mount</h3>
+        The mount specifies a mount that is to be mounted on the instances
+        <h3>Usage</h3>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_mount</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        <h3>Options</h3>
+        <dd>
+          <dt class='option'><a>name</a><dd>The location of the mount (default: /data)</dd></dt>
+          <dt class='option'><a>device</a><dd>The device location for the mount. This mounts at the directory set by the name</dd></dt>
+          <dt class='option'><a>options</a><dd>The options to be set in the mount file fstab (default: rw,nosuid,noquota)</dd></dt>
+          <dt class='option'><a>fstype</a><dd>The Type of mount (default: xfs)</dd></dt>
+        </dd>
+        <h3>Examples</h3>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_mount</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>/data<span class="String">&quot;</span></span>, <span class="Constant"><span class="Constant">:</span>device</span> =&gt; <span class="String"><span class="String">&quot;</span>/dev/sda100<span class="String">&quot;</span></span>)</pre>
+      </div>
+      <div id='footer'>
+        Copyright 2008 - Ari Lerner
+        <br />
+        <a href='http://citrusbyte.com'>CitrusByte</a>
+        <script type='text/javascript'>
+          var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type='text/javascript'>
+          var pageTracker = _gat._getTracker("UA-137009-7");
+          pageTracker._trackPageview();
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
