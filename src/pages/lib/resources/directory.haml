@@ -1,0 +1,18 @@
+.small.right
+  =link "<< Back to resources", "lib/resources"
+%h3 Directory
+
+The directory resource is used to describe a directory that should be present on all of the instances.
+
+%h3 Usage
+
+~code_to_syntax("has_directory(:name => '...') do\n\t# More options. \n\t# This block is optional\nend")
+
+%h3 Options
+%ul
+  ~option_entry("name", "Describe the location of the file with the name")
+  ~option_entry("mode", "Describe the mode of the file (default: 644)")
+  ~option_entry("owner", "The owner of the file (default: poolparty user)")
+
+%h3 Example
+~code_to_syntax("has_directory(:name => '/etc/apache2')")

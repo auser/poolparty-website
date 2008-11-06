@@ -1,0 +1,18 @@
+.small.right
+  =link "<< Back to resources", "lib/resources"
+%h3 Host
+
+The host parameter sets hosts on the instances. Setting this, every node will have the host.
+
+%h3 Usage
+
+~code_to_syntax("has_host(:name => '...') do\n\t# More options. \n\t# This block is optional\nend")
+
+%h3 Options
+%dd
+  ~option_entry("name", "The name of the instance")
+  ~option_entry("ip", "IP address of the instance for the host entry")
+
+%h3 Examples
+
+~code_to_syntax("has_host({:name => \"other_machine\", :ip => 192.168.0.101 })")

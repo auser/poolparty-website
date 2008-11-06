@@ -31,7 +31,7 @@
   plugin, then we'll disect it
 
 %p
-  ~file_to_code("tutorials/mysql_plugin.rb")
+  ~file_to_code("/tutorials/mysql_plugin.rb")
 
 %h3 Packages
 
@@ -39,7 +39,7 @@
   First, you'll notice that there are some lines with
   %strong has_package
   This tells your nodes and instances that they make sure they have these packages and if not, that they should be installed (installed with the preferred package manager). These are called "Resources." There is a list of the available 
-  = link "lib/Resources"
+  = link "/lib/Resources"
   here. Note that they can be preceeded by either has_ or does_not_have_, which does exactly what it sounds like. has_ sends a present notice to the resource and does_not_have_ sends an absent notice to the resource.
 
 %h3 Setup

@@ -1,0 +1,18 @@
+.small.right
+  =link "<< Back to resources", "lib/resources"
+%h3 Ssh Key
+
+The sshkey resource specifies an ssh key that should be distributed on all the nodes
+
+%h3 Usage
+
+~code_to_syntax("has_sshkey(:key => '...') do\n\t# More options. \n\t# This block is optional\nend")
+
+%h3 Options
+%dd
+  ~option_entry("key", "The key content for the ssh key")
+  ~option_entry("target", "The location of the ssh key")
+
+%h3 Examples
+
+~code_to_syntax("has_sshkey(:key => \"ABIGLONGSTRINGOFDIGETS\", :target => \"/root/.ssh/key_file\")")
