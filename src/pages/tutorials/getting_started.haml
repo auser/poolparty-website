@@ -11,41 +11,79 @@
   ~code_to_syntax("gem sources --add http://gems.github.com", "shell-unix-generic", "blackboard")
   so that rubygems can find the gem.
 
+%h4 Bleeding edge install
+%p
+  Grab the code from github:
+  ~code_to_syntax("git clone git://github.com/auser/poolparty.git", "shell-unix-generic", "blackboard")
+  Make the gem
+  ~code_to_syntax("cd poolparty && rake local_deploy", "shell-unix-generic", "blackboard")
+
 %h4 Pool spec
 %p
   Everything in your pool is decided by your spec file. This is where all the logic for your cloud will go. This can be generated with the command:
   ~code_to_syntax("pool spec [name]", "shell-unix-generic", "blackboard")
-  You will now have a spec file in the location: "name/name.rb"
+  You will now have a spec file in the location: "name/pool.spec." There will also be a directory called plugins/. Don't worry about that now, we'll get back to the plugins directory and how to use it  
 %p
   Although more advanced examples can be found throughout the site, we'll use a basic one to get us going. First, we can start out by making a pool.
   ~file_to_code("tutorials/first_pool.rb")
   This doesn't really do anything, but it gives us a convenient wrapper around our clouds, You don't need to define a pool, but it's usually a good idea if the clouds of nodes are going to talk to each other. 
   Now let's make a cloud that actually does something.
   ~file_to_code("tutorials/basic_cloud.rb")
-  Your cloud is now setup to scale from 2 instances all the way to 20 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
+  Your cloud is now setup to scale from 2 instances to 5 instances at a maximum. You've defined one cloud (called app) inside the pool (called app).
 %p
-  From within this cloud block is where you describe your server setup. You there are a few built-in
+  From within this cloud block is where you describe your server setup. You there are a quite few built-in
   = link "../lib/Resources"
   that you can describe here, for instance for a git repository
-  ~code_to_syntax('has_git(:name => "repos", :source => "git://...")')
+  ~code_to_syntax("has_git({:name => \"poolpartyrepos\", \n\t:source => \"git://github.com/auser/poolparty-website.git\", \n\t:at => \"/var/www/poolpartyrb.com\"}")
   or a file
   ~code_to_syntax('has_file(:name => "/var/www/index.html", :content => "<h2>Hello world</h2>")')
   The full list can be found
   = link "../lib/Resources"
+  There are also 
+  = link "/lib/Built in helpers"
+  that you can use in your spec.
 %p
   Things get a lot more interesting when plugins get involved. Currently, as of the time of this writing there are plugins in the works to setup apache2, passenger, ruby on rails, postgresql, mysql and more. The plugin syntax is clear and enjoyable as well, so if you require something different, please checkout the
   = link "/tutorials/Basic Plugin Tutorial"
 
+%h4 Starting your cloud
+%p
+  PoolParty isn't based on any remoter base itself, but can be extended to support anyt hat provides an api for starting, stopping and listing instances. The default remoter base for PoolParty is ec2. You can specify the remoter base with the command:
+  ~code_to_syntax("using :ec2")
+  in your spec file.
+%p
+  To get started on ec2, go ahead and check out the
+  = link "Getting started on ec2", "tutorials/getting_started_on_ec2"
+  tutorial. Don't worry, this tutorial will be here when you get back.
+
+%h4 Interacting with your cloud  
+%p 
+  If you have followed a tutorial from above, then you should be ready to interact with your cloud. Before we start it, we will need to make sure we have a key set for the clouds. Let's make note of what keypairs we need by running the command:
+  ~code_to_syntax("cloud add-keypair --listing", "shell-unix-generic")
+  This will list the keypairs you need to have for your clouds. If you run the same command without the --listing, PoolParty will create these keypairs for you.
+  ~code_to_syntax("cloud add-keypair --verbose", "shell-unix-generic")
+%p
+  Now we are ready to play with the cloud!
+
 %h4= link "/lib/Cloud Speak"
 %p
   Once you have your pool spec at a comfortable spot, it's time to get your cloud launched. 
-  ~code_to_syntax("cloud start -n app", "shell-unix-generic", "blackboard")
+  ~code_to_syntax("cloud start --name app", "shell-unix-generic", "blackboard")
 %p
   %ul
     %li PoolParty will launch your master instance
     %li Configure the master instance based on the values in your manifest
     %li Install the appropriate software
     %li Start monitoring the cloud
+%p
+  Now, let's list the cloud and see what instances we have up...
+  ~code_to_syntax("cloud list --name app", "shell-unix-generic", "blackboard")
+  Hey! What do you know? It started a new instance for us based on the minimum instances requirement
+  ~code_to_syntax("*** Listing cloud app\n****** Active instances\nmaster	75.101.162.232\nnode1	67.202.61.184", "shell-unix-generic", "blackboard")
+%p
+  Let's not forget to terminate the clouds so we aren't charged too much for playtime
+  ~code_to_syntax("cloud terminate", "shell-unix-generic", "blackboard")
+  Note, I left off the --name this time. If you do, it will pick the first cloud. I tend to leave it off when I only have one cloud in my pool.
 
 %p
-  PoolParty sets up a lightweight communication network and handles the provisioning and load balancing. The master instance is the main connection between your cloud and the rest of the world. Heartbeat is automatically setup on your cloud so in case your master instance goes down, your cloud will automatically recover itself.
+  PoolParty sets up a lightweight communication network and handles the provisioning and load balancing. The master instance is the main connection between your cloud and the rest of the world.

@@ -1,0 +1,24 @@
+.small.right
+  =link "<< Back to resources", "lib/resources"
+%h3 File
+
+The file resource is used to describe a file that should be present on all of the instances.
+
+%h3 Usage
+
+~code_to_syntax("has_file(:name => '...') do\n\t# More options. \n\t# This block is optional\nend")
+
+%h3 Options
+%ul
+  ~option_entry("name", "Describe the location of the file with the name")
+  ~option_entry("mode", "Describe the mode of the file (default: 644)")
+  ~option_entry("owner", "The owner of the file (default: poolparty user)")
+  ~option_entry("content", "The contents of the file")
+  ~option_entry("source", "Used to describe a file that is hosted on the master instance.")
+  %p
+    To write a file to the template directory, use:
+    ~code_to_syntax("copy_template_to_storage_directory(filepath)")
+  ~option_entry("template", "The file contents are described with the template. The location given must be readable")
+
+%h3 Example
+~code_to_syntax("has_file(:name => '/etc/motd', :content => 'Hey and welcome to your node today!')")

@@ -1,0 +1,19 @@
+.small.right
+  =link "<< Back to resources", "lib/resources"
+%h3 Gempackage
+
+Gempackages describe distributed gems on the cloud. The gem is only downloaded once and then hosted on the master if a download url is given. 
+
+%h3 Usage
+
+~code_to_syntax("has_gempackage(:name => '...') do\n\t# More options. \n\t# This block is optional\nend")
+
+%h3 Options
+%dd
+  ~option_entry("name", "The gem name")
+  ~option_entry("download_url", "The location of the gem to download and server across the instances")
+  ~option_entry("version", "The gem version requirement (optional and useless if download_url is given)")
+  ~option_entry("source", "The gem source (optional and useless matter if download_url is given)")
+
+%h3 Examples
+~code_to_syntax("has_gempackage(:name => 'rake', \n\t:download_url => 'http://rubyforge.org/frs/download.php/43954/rake-0.8.3.gem')")

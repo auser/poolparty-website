@@ -44,44 +44,25 @@
         &nbsp;
       </div>
       <div id='content'>
-        <h2>PoolParty resources</h2>
+        <h3>Spec shortcuts</h3>
         <p>
-          This is a list of resources
-          <b>currently</b>
-          available at your disposal when writing your spec-file and plugins. All of these resources can be called with the functions:
-          <ul>
-            <li>has_</li>
-            For example has_file(...)
-            <li>does_not_have_</li>
-            For example: does_not_have_file(...)
-          </ul>
+          There is some pretty sugar that PoolParty gives you for free.
         </p>
-        <h3>Resources</h3>
-        <p>
-          <ul>
-            <li><a href="../lib/resources/file">file</a></li>
-            <li><a href="../lib/resources/package">package</a></li>
-            <li><a href="../lib/resources/gempackage">gempackage</a></li>
-            <li><a href="../lib/resources/exec">exec</a></li>
-            <li><a href="../lib/resources/variable">variable (for templates)</a></li>
-            <li><a href="../lib/resources/line_in_file">line_in_file</a></li>
-            <li>remotefile</li>
-            <li><a href="../lib/resources/cron">cron</a></li>
-            <li>host</li>
-            <li>service</li>
-            <li>sshkey</li>
-            <li>symlink</li>
-            <li>directory</li>
-            <li>classpackage</li>
-            <li>mount</li>
-          </ul>
-        </p>
-        <h3>Helper methods</h3>
-        <p>
-          <ul>
-            <li>execute_if</li>
-          </ul>
-        </p>
+        <h3>EC2 specific</h3>
+        <ul>
+          <li>
+            mount_ebs_volume_at "vol-4e48ad27", "/vol"
+            <p>
+              You can make sure that your master has the volume vol-4e48ad27 mounted at the location /vol. This way, any and all of your data set in the directory /vol is saved in the Elastic Block Store volume.
+            </p>
+          </li>
+          <li>
+            set_master_ip_to "75.101.162.232"
+            <p>
+              This will tell your master instance to requisition the ip address 75.101.162.232 when it starts up.
+            </p>
+          </li>
+        </ul>
       </div>
       <div id='footer'>
         Copyright 2008 - Ari Lerner

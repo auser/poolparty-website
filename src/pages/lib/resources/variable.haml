@@ -1,0 +1,23 @@
+.small.right
+  =link "<< Back to resources", "lib/resources"
+%h3 Variable
+
+Describes a variable to use in a template. One of the powerful hidden features behind puppet is that you can use templating for your templates
+
+%h3 Usage
+
+~code_to_syntax("has_variable(:name => '...') do\n\t# More options. \n\t# This block is optional\nend")
+
+%h3 Options
+%dd
+  ~option_entry("name", "The name of the variable to use in the template")
+  ~option_entry("value", "The value of the variable in the template")
+
+%p
+  To use these variables, in your Erb template, reference them like so
+  
+  ~code_to_syntax("name: <%= variablename %>")
+
+%h3 Examples
+
+~code_to_syntax("has_variable(:name => \"name\", :value => \"\#\{cloud.name\}\")")

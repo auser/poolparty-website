@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>PoolParty!</title>
-    <link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/blackboard.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/classes.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/header.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/navmenu.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="../../stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/blackboard.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/classes.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/header.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/navmenu.css" media="all" rel="stylesheet" type="text/css"/><link href="../../stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <div id='wrapper'>
@@ -22,21 +22,21 @@
             <a href="/">Home</a>
           </li>
           <li class='docs'>
-            <a href="docs.html">Docs</a>
+            <a href="../../docs.html">Docs</a>
           </li>
           <li class='examples'>
-            <a href="examples.html">Examples</a>
+            <a href="../../examples.html">Examples</a>
           </li>
         </ul>
         <ul class='left'>
           <li class='community'>
-            <a href="community.html">Community</a>
+            <a href="../../community.html">Community</a>
           </li>
           <li class='tutorials'>
-            <a href="tutorials.html">Tutorials</a>
+            <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li class='plugins'>
-            <a href="plugins.html">Plugins</a>
+            <a href="../../plugins.html">Plugins</a>
           </li>
         </ul>
       </div>
@@ -44,37 +44,15 @@
         &nbsp;
       </div>
       <div id='content'>
-        <h2>Documentation</h2>
-        <p>
-          The official documentation can be found
-          <a href='http://poolparty.rubyforge.org/rdoc/'>http://poolparty.rubyforge.org/rdoc/</a>
-        </p>
-        <h2>References</h2>
-        <p>
-          <ul>
-            <li><a href="lib/resources">Resources</a></li>
-            <li><a href="lib/cloud_speak">Cloud Speak</a></li>
-          </ul>
-        </p>
-        <h3>
-          Thanks
-        </h3>
-        <p>
-          Special thanks to
-          <ul>
-            <li>
-              AJ Christensen
-              <a href='mailto:aj@junglist.gen.nz'>aj [at] junglist.gen.nz</a>
-            </li>
-            <li>Blake Mizerany</li>
-            <li>Ron "deadprogrammer" Evans</li>
-            <li>
-              The
-              <a href='http://citrusbyte.com'>CitrusByte</a>
-              team
-            </li>
-          </ul>
-        </p>
+        <div class='small right'>
+          <a href="../../lib/resources"><< Back to resources</a>
+        </div>
+        <h3>Line in File</h3>
+        Ensures that the line given is in the file
+        <h3>Usage</h3>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">'</span>line<span class="String">'</span></span>, <span class="String"><span class="String">'</span>/full/file/path.ext)</span></pre>
+        <h3>Examples</h3>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">&quot;</span>ENABLED=1<span class="String">&quot;</span></span>, <span class="String"><span class="String">&quot;</span>/etc/default/haproxy<span class="String">&quot;</span></span>)</pre>
       </div>
       <div id='footer'>
         Copyright 2008 - Ari Lerner

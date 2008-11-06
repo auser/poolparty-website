@@ -1,0 +1,19 @@
+.small.right
+  =link "<< Back to resources", "lib/resources"
+%h3 Exec
+
+Ensure a command is run on the instances
+
+%h3 Usage
+
+~code_to_syntax("has_exec(:name => '...') do\n\t# More options. \n\t# This block is optional\nend")
+
+%h3 Options
+%dd
+  ~option_entry("name", "The name of your exec. This is optional, but nice for debugging purposes")
+  ~option_entry("cwd", "Current working directory to execute the command (optional)")
+  ~option_entry("command", "This describes the command to run")
+  ~option_entry("path", "The path to run the command with (optional)")
+
+%h3 Examples
+~code_to_syntax("has_exec(:name => 'start messenger', :command => 'server-start-node', :requires => get_gempackage('poolparty-latest', :onlyif => 'ps aux | grep beam | grep master')")

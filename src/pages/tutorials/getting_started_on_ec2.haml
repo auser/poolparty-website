@@ -1,0 +1,51 @@
+.tutorial
+  %h2 Getting started on EC2
+
+  %h4 Sign up
+  %ol
+    %li
+      Navigate to 
+      = link "Amazon's aws page", "http://aws.amazon.com/"
+      and click on the
+      =link "Getting started", "http://www.amazon.com/gp/aws/registration/registration-form.html"
+      link. If you already have an aws account, log in and skip the next step.
+    .right
+      =link(img("/images/tutorials/ec2/signup.png"), "http://www.amazon.com/gp/aws/registration/registration-form.html")
+    %li
+      Sign up and validate your account
+    %li
+      Once you've signed up or signed in, hover over the product's menu and click on Elastic Computing Cloud.
+      =link img("/images/tutorials/ec2/service_ec2.png"), "http://aws.amazon.com/ec2/"
+    %li
+      Then, click on the Sign up for Amazon EC2 button to sign up for the ec2 service
+      =img("/images/tutorials/ec2/ec2_button.png")
+    %li
+      Now, once you have access to ec2, get your access identifiers by hovering over Your Account in the menu and clicking on Access Identifiers
+      =img("/images/tutorials/ec2/access_ids.png")
+    %li
+      Scroll down the page and find the box titled "Access Key ID and Secret Access Key," In the box, you should see a box titled "Your Access Key ID." Make note of this string.
+      =img("/images/tutorials/ec2/access_key_id.png")
+    %li
+      Scroll down a little further and find the box titled "Your Secret Access Key." This box is hidden for security reasons, so you'll have to click on the show link. Make note of this string as well.
+      =img("/images/tutorials/ec2/secret_access_key_id.png")    
+  .clear
+    I like to copy and paste the identifiers into a temporary location so I don't have to navigate to the AWS page constantly. 
+  %h4 Setup
+  %p
+    These access identifiers are crucial for your cloud to operate, so we need to expose them to your cloud. PoolParty expects these identifiers to be in one of several places. You can explicitely set them in your pool.spec like so:
+    ~code_to_syntax("cloud :app do\n\taccess_key \"AAAAAAAAAABBBBBB\"\n\tsecret_access_key \"NRLSKDM@$@$/4@$%%NNNSN\"\n\t...")
+  %p
+    Of course, this works if you are going to keep your spec local and private, but that doesn't really bod well for sharing, so instead, let's set them as environment variables. You can do this by setting them explicitly in a profile file. I develop on a mac, so this file for me is at ~/.profile. Check your OS for your profile file.
+  %p
+    Export the variables AWS_ACCESS_KEY_ID with the access key you found above on the AWS site and export the AWS_SECRET_ACCESS_KEY with the secret access key you found from the AWS site as well like so: 
+    ~code_to_syntax("export AWS_ACCESS_KEY_ID=AAAAAAAAAABBBBBB\nexport AWS_SECRET_ACCESS_KEY=NRLSKDM@$@$/4@$%%NNNSN", "shell-unix-generic")
+    I tend to like keeping things separate, so I create a shell script to source. For me, this looks like:
+    ~file_to_code("tutorials/env.sh", "shell-unix-generic")
+  %p
+    What's the POOL_SPEC doing there? This will save a lot of headache if you export this in the file. PoolParty expects to be able to find the pool.spec in one of several locations. The current directory, the file pointed to by the POOL_SPEC environment variable, /etc/poolparty/pool.spec, and a few other places. You can also explicitly set these when calling pool functions with the -n switch, but that gets old and fast.
+  %p
+    Great! Now we are ready to interact with our cloud on ec2! You can head to the 
+    =link "Getting Started", "tutorials/getting_started"
+    tutorial for more information about communicating to your cloud or head back
+    =link "Home", "/"
+    for other resources
