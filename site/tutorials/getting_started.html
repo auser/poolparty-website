@@ -7,19 +7,19 @@
   <body>
     <div id='wrapper'>
       <div id='masthead'>
-        <h2>CitrusByte Labs</h2>
+        <h2>AT&T Interactive R&D</h2>
         <div id='external_links'>
-          <!-- =link (img("/images/site/logo.gif"), "http://citrusbyte.com") -->
+          <!-- =link (img("attir_and_d_logo.gif"), "http://poolpartyrb.com") -->
         </div>
       </div>
       <div class='spacer clear'>
         &nbsp;
       </div>
       <div id='sidebar'>
-        <h3><a href="/"><img alt="Pplogo2" src="/images/site/pplogo2.png"/></a></h3>
+        <h3><a href="../index.html"><img alt="Pplogo2" src="../images/site/pplogo2.png"/></a></h3>
         <ul class='left'>
           <li class='home'>
-            <a href="/">Home</a>
+            <a href="../index.html">Home</a>
           </li>
           <li class='docs'>
             <a href="../docs.html">Docs</a>
@@ -79,15 +79,15 @@
         </p>
         <p>
           From within this cloud block is where you describe your server setup. You there are a quite few built-in
-          <a href="../lib/resources.html">Resources</a>
+          <a href="../docs/resources.html">Resources</a>
           that you can describe here, for instance for a git repository
-          <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_git</span>({<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>poolpartyrepos<span class="String">&quot;</span></span>, &#x000A;<span class="line-numbers">   2 </span> 	<span class="Constant"><span class="Constant">:</span>source</span> =&gt; <span class="String"><span class="String">&quot;</span>git://github.com/auser/poolparty-website.git<span class="String">&quot;</span></span>, &#x000A;<span class="line-numbers">   3 </span> 	<span class="Constant"><span class="Constant">:</span>at</span> =&gt; <span class="String"><span class="String">&quot;</span>/var/www/poolpartyrb.com<span class="String">&quot;</span></span>}</pre>
+          <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_git</span>({<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>poolpartyrepos<span class="String">&quot;</span></span>, &#x000A;<span class="line-numbers">   2 </span> 	<span class="Constant"><span class="Constant">:</span>source</span> =&gt; <span class="String"><span class="String">&quot;</span>git://github.com/auser/poolparty-website.git<span class="String">&quot;</span></span>, &#x000A;<span class="line-numbers">   3 </span> 	<span class="Constant"><span class="Constant">:</span>at</span> =&gt; <span class="String"><span class="String">&quot;</span>/var/www/poolpartyrb.com<span class="String">&quot;</span></span>})</pre>
           or a file
           <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_file</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>/var/www/index.html<span class="String">&quot;</span></span>, <span class="Constant"><span class="Constant">:</span>content</span> =&gt; <span class="String"><span class="String">&quot;</span>&lt;h2&gt;Hello world&lt;/h2&gt;<span class="String">&quot;</span></span>)</pre>
           The full list can be found
-          <a href="../lib/resources.html">Resources</a>
+          <a href="../docs/resources.html">Resources</a>
           There are also
-          <a href="/lib/built_in_helpers.html">Built in helpers</a>
+          <a href="../docsbuilt_in_helpers.html">docs/Built in helpers</a>
           that you can use in your spec.
         </p>
         <p>
@@ -115,7 +115,7 @@
         <p>
           Now we are ready to play with the cloud!
         </p>
-        <h4><a href="/lib/cloud_speak.html">Cloud Speak</a></h4>
+        <h4><a href="../docscloud_speak.html">docs/Cloud Speak</a></h4>
         <p>
           Once you have your pool spec at a comfortable spot, it's time to get your cloud launched.
           <pre class="blackboard"><span class="line-numbers">   1 </span> cloud start --name app</pre>
@@ -144,9 +144,8 @@
         </p>
       </div>
       <div id='footer'>
-        Copyright 2008 - Ari Lerner
+        Copyright 2008 - Ari Lerner & Cloudteam@ATTinteractive
         <br />
-        <a href='http://citrusbyte.com'>CitrusByte</a>
         <script type='text/javascript'>
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
           document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

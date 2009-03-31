@@ -1,3 +1,6 @@
+<script src="http://gist.github.com/69121.js"></script>
+
+
 # Basic poolparty template
 require "poolparty_apache2_plugin"
 
