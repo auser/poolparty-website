@@ -1,0 +1,211 @@
+%h1
+  Setting up ec2
+.wikistyle
+  %p
+    %strong
+      Note:
+    PoolParty works with
+    %span.caps
+      ANY
+    ubuntu
+    %span.caps
+      AMI
+    (support for other OSes is already in progress)
+  %h3
+    Sign up
+  %ol
+    %li
+      Navigate to
+      %a{ :href => "http://aws.amazon.com/" }
+        Amazon's aws page
+      %br
+      and click on the
+      %a{ :href => "http://www.amazon.com/gp/aws/registration/registration-form.html" }
+        Getting started
+      link. If you already have an aws account, log in and skip the next step.
+    %li
+      Sign up
+    %li
+      Once you've signed up or signed in, hover over the product's menu and click on
+      %a{ :href => "http://aws.amazon.com/ec2/" }
+        Elastic Computing Cloud
+    %li
+      Then, click on the Sign up for Amazon EC2 button to sign up for the ec2 service
+    %li
+      Now, once you have access to ec2, get your access identifiers by hovering over Your Account in the menu and clicking on Access Identifiers
+    %li
+      Scroll down the page and find the box titled "Access Key ID and Secret Access Key," In the box, you should see a box titled "Your Access Key ID." Make note of this string.
+    %li
+      Scroll down a little further and find the box titled "Your Secret Access Key." This box is hidden for security reasons, so you'll have to click on the show link. Make note of this string as well.
+      %br
+      I like to copy and paste the identifiers into a temporary location so I don't have to navigate to the
+      %span.caps
+        AWS
+      page constantly.
+  %h3
+    Setup
+  %p
+    PoolParty expects a number of access identifiers to be in one of several places. 
+    
+    %h4 clouds.rb
+
+    %p
+      You can explicitely set them in your clouds.rb like so:
+      %pre
+        %code
+          cloud :app do
+          \  access_key "AAAAAAAAAABBBBBB"
+          \  secret_access_key "NRLSKDM@$@$/4@$%%NNNSN"
+          \  # ...
+          end
+
+      Of course, this works if you are going to keep your spec local and private, but that doesn't really work well for sharing, so instead, let's set them as environment variables.
+
+    %h4 
+      environment variables
+
+    %p
+      Poolparty commands will look for the following
+      %span.caps
+        AWS
+      environment variables
+    %ul
+      %li
+        %tt AWS_ACCESS_KEY
+      %li
+        %tt AWS_SECRET_ACCESS_KEY
+      %li
+        %tt EC2_PRIVATE_KEY
+      %li
+        %tt EC2_CERT
+    %p
+      for your
+      %span.caps
+        AWS
+      access key, secret key, private key &amp; cert, respectively.
+    %p
+      Stick this in your 
+      %tt ~/.bashrc 
+      or 
+      %tt ~/.profile.
+      (Alternatively, create a script in
+      %tt ~/.ec2/keys_and_secrets.sh
+      and then 
+      %tt source $HOME/.ec2/keys_and_secrets.sh
+      in your
+      %tt ~/.profile)
+
+    %pre
+      %code
+        \#!/bin/sh
+        export AWS_ACCESS_KEY="AAAAAAAAAABBBBBB"
+        export AWS_SECRET_ACCESS_KEY="NRLSKDM@$@$/4@$%%NNNSN"
+        export EC2_PRIVATE_KEY="/path/to/pk-XXX.pem"
+        export EC2_CERT="/path/to/cert-XXX.pem"
+    %p
+      Be sure to open a new terminal before you continue so that your changes are re-loaded (or reload your profile from the command-line with
+      %code
+        source ~/.profile
+      ).
+
+    %p
+
+  %h3
+    Keypair
+  %p
+    If you haven't done so already, generate the keypair
+    %br
+  %pre
+    %code
+      todo - put in cmds for keypair generation
+  %p
+
+  %h3 Ports
+  =tip_box do
+    Wondering why do you have to open these ports? No idea what a 'security group' is? Checkout the 
+    =link "Amazon EC2 Foundations", "amazon.html"
+    page
+
+  %p
+    Finally, make sure the following ports are open in your 
+    =link "EC2 security group:", "amazon.html#security_groups"
+    
+  %ol
+    %li
+      22
+    %li
+      8642
+  %p
+    Old ports
+    %strong
+      not
+    required for release 1.1 and after
+  %ol
+    %li
+      4369 (erlang daemon)
+    %li
+      8140 (puppet)
+    %li
+      7050 (cloud management)
+  %p
+    If these ports aren't open, your cloud will fail.
+  %pre
+    %code
+      ec2-authorize -p 22 default
+      ec2-authorize -p 8642 default
+  %p
+    Sometimes it's nice to ping your machine, but ping doesn't need to be open, so this step is optional:
+    %br
+  %pre
+    %code
+      ec2-authorize -P icmp -t -1:-1 default
+  %p
+
+  %h2 clouds.rb file location
+
+  %p
+    If you are going to point to one clouds.rb file more often than any other, you can add it as an environment variable as well, like so
+    %br
+  %pre
+    %code
+      export POOL_SPEC=/home/auser/Sites/pp/clouds.rb
+  %p
+  %p
+    This will save a lot of headache if you export this in the file. PoolParty expects to be able to find the clouds.rb in one of several locations. 
+
+  %ol
+    %li 
+      the current directory
+    %li 
+      the file pointed to by the 
+      %tt POOL_SPEC 
+      environment variable 
+    %li 
+      %tt ~/.poolparty/clouds.rb
+    %li 
+      %tt /etc/poolparty/clouds.rb 
+
+  You can also explicitly set these when calling 
+  %tt pool 
+  commands with the 
+  %tt -n 
+  switch, but that gets old fast.
+
+  %p
+    Note, that if you are in the same directory as your clouds.rb file, then PoolParty will assume you are working with that file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
