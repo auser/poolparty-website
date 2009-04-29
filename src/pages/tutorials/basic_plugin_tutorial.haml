@@ -1,16 +1,13 @@
 %h2 Basic plugin tutorial
 
 %p
-  Plugins provide the meat of PoolParty's functionality. We'll dive a little bit into the process of plugin development. They are intended on being very easy and fun to write, so with no further ado...
-  
-%h3 First steps
-%p
-  You have a bunch of resources (unlimited amount considering you can create your own, but that's out of the scope for this tutorial) at your disposal to use on your server. These are described more in-depth
-  = link "here", "../docs/Resources"
-  %small.note Thanks to benburkert, a plugin generator is in progress!
+  A plugin is a container for resources.  Resources are described 
+  = link "here.", "../docs/Resources"
+  Plugins are very similar to chef recipies.  In fact, you can get the same functionality by writing a chef recipie and including it in your clouds.rb file, has_chef_recipie 'path/to/recipie'
+
 
 %p
-  The structure of a gem is standard and should look like
+  The structure of a PoolParty plugin looks like
   ~dir_to_syntax({:plugin_name => {:files => ["plugin_name.rb"], :dirs => {:spec => {:files => %w(spec_helper.rb plugin_name_spec.rb)}}}})
   The spec_helper will be generated for you or looks something like:
   
