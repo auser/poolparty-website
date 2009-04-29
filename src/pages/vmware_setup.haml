@@ -1,0 +1,62 @@
+%h1 VMware (Fusion) and PoolParty setup
+
+%p
+  PoolParty supports VMware as a 
+  =link "remoter base.", "language.html#remoter_base"
+  This allows one to test
+  %tt clouds.rb
+  files without the cost of booting and shutting down cloud 
+  =link "instances.", "language.html#instance"
+  Currently, this has only been tested on Mac OSX with VMware Fusion. In theory, it should work on any machine with the
+  %tt vmrun
+  binary installed.
+
+  %ol
+    %li 
+      %p
+        Download
+        =link "VMware Fusion", "https://www.vmware.com/tryvmware/?p=fusion"
+    %li
+      %p
+        Download the
+        =link "Ubuntu VMware image", "http://blogs.vmware.com/teamfusion/2009/04/ubuntu-904-on-vmware-fusion-2.html"
+        Make sure you can already boot it up and you have internet connectivity 
+    %li 
+      %p
+        You must be able to access the image when the instance boots up.
+        Therefore you need to install your public key and take a snapshot of
+        the image.
+
+      %p 
+        Add your public key to the list of authorized keys on the root user 
+        %strong on the image
+
+      %p
+        For example:
+        ~code_to_syntax "scp ~/.ssh/id_rsa.pub root@local_vmware_ip:/root/.ssh/authorized_keys"
+
+      %p 
+        Then 
+        %strong take a snapshot
+        I call my snapshot 
+        %tt base
+        %p
+        =img "screenshots/take_snapshot_1.png"
+
+        %p
+        =img "screenshots/snapshot_list.png"
+        %center
+          %em A list of snapshots
+
+
+    %li 
+      %p
+        Make sure 
+        %tt vmrun 
+        is in your 
+        %tt PATH
+
+      %p
+        For example, using VMware Fusion on Mac OSX add the following to your 
+        %tt .profile
+        ~code_to_syntax "export PATH=$PATH:/Library/Application\ Support/VMware\ Fusion"

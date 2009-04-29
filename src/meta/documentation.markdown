@@ -47,5 +47,4 @@ What's Next
 ===========
 link to everything
 
-
 # vim: ft=mkd
