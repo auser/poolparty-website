@@ -2,20 +2,23 @@ Notes
 =====
 This file is documentation about the documentation
 
-
 TODO
 ====
-* simple getting started cloud.rb
+# high
+* PP skeleton project / simple getting started cloud.rb
 * define cloud start, provision, configure - what is the reason order and elements of each? / what does the bootstrap and provisioning process look like
 * what is chef? how does it work
 
-* why use PP
-  * why is PP better than chef alone?
-* purpose of PP
-* the core team
-* pp theory - homogenious nodes
-* idiomatic PP
+# med
+* pp overview / purpose of PP / pp theory - homogenious nodes
 * PP family of gems and what they do
+* give tutorials the once-over
+* plugins page is wrong
+* look at examples page
+
+# low
+* why use PP / why is PP better than chef alone?
+* the core team
 
 DONE
 =====
