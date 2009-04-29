@@ -5,12 +5,62 @@
   The goal of this page is to briefly explain many of these terms to ease entry
   into the cloud computing space.
 
+%h2 Terminology 
+
 =define_term "remoter base" do
-  a remoter base is a
+  a
+  %em remoter base 
+  is also known as Cloud Provider, such as Amazon EC2. Remoter bases are
+  responsible for creating and destroying instances. Currently, support exists
+  for 
+  =link "Amazon EC2", "amazon_ec2_setup.html" 
+  and 
+  =link "VMware", "vmware_setup.html"
+  instances. Support is planned for disk images and other backends (Slicehost,
+  Eucalyptus, libvirt, etc.). Please update 
+  =link "Requested features", "http://wiki.github.com/auser/poolparty/requested-features"
+  with specific requests.
 
 =define_term "instance" do
   an 
   %em instance
-  or 
+  (or
   %em node
-  is a logical self-contained machine. Each instance has its own copy of the operating system and its own memory space.
+  ) is a logical self-contained machine. Each instance has its own copy of the operating system and its own memory space.
+
+=define_term "provision (ing)" do
+  %em provisioning
+  is the process of transfering all software and assets to an 
+  =link "instance", "#instance"
+
+=define_term "provisioner" do
+  A 
+  %em provisioner 
+  allows communication between the host where the cloud commands
+  are being run (i.e. your laptop) and the 
+  =link "instances", "#instance" 
+  created using 
+  =link "remoter bases.", "#remoter_base"
+
+  Examples include Capistrano and SSH. Their primary use is transfer
+  dependency files, templates, deploy_directory (if being used) and chef
+  recipes to the cloud.
+
+=define_term "dependency resolver" do 
+  These are host configuration management tools such as Chef and Puppet. The
+  default dependency resolver for PoolParty is 
+  =link "Chef."
+
+=define_term "resources" do
+  entities that can be addressed and manipulated such as files, directories and
+  packages. 
+  
+=define_term "plugin" do
+  Plugins are collections of resources. Use of PoolParty plugins and resources ensures that the cloud configuration does not change when the
+  =link "dependency resolver", "#dependency resolver" 
+  changes.
+
+=define_term "monitors" do
+  This is set of monitoring services written as a Rack application running on
+  port 8642. In the near future Monitors will support a plugin interface that
+  will allow users to write cloud-specific or application-specific monitors.
