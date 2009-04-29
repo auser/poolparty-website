@@ -41,7 +41,6 @@ Getting Started
   maybe fork a project
 
 
-
 What's Next
 ===========
 link to everything
