@@ -1,7 +1,6 @@
 require 'uv'
 
 module CodeHelper
-#   def clean(str); str.gsub(/^\s{#{str[/\s+/].length}}/, ''); end
   def clean(str, indent=2)
     str.split(/\n/).collect{ |line| line.gsub(/^\s{#{indent}}/, '-')}.join("\n")
   end
