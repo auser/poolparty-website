@@ -60,3 +60,25 @@
         For example, using VMware Fusion on Mac OSX add the following to your 
         %tt .profile
         ~code_to_syntax "export PATH=$PATH:/Library/Application\ Support/VMware\ Fusion"
+
+    %li
+      %p
+        enable vmrun in your 
+        %tt clouds.rb
+
+        %p
+          %em
+            todo: inline block below is ugly
+
+        :ruby
+          haml_concat code_to_syntax(<<-eos)
+            using :vmrun do
+            vmx_hash({
+              "/Users/alerner/Documents/Virtual Machines.localized/one.vmwarevm/Ubuntu Linux 32bit.vmx" => "192.168.248.128"
+            })
+          end
+          eos
+
+    %li 
+      %p
+        %tt cloud-start

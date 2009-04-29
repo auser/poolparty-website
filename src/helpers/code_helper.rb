@@ -1,6 +1,11 @@
 require 'uv'
 
 module CodeHelper
+#   def clean(str); str.gsub(/^\s{#{str[/\s+/].length}}/, ''); end
+  def clean(str, indent=2)
+    str.split(/\n/).collect{ |line| line.gsub(/^\s{#{indent}}/, '-')}.join("\n")
+  end
+
   def file_to_code(filename="", language="ruby", theme="blackboard")
     code_to_syntax(open(::File.join(File.dirname(__FILE__), "..", "examples", filename)).read, language, theme)
   end
@@ -19,4 +24,6 @@ module CodeHelper
   def dir_to_syntax(dir_hash={}, language="shell-unix-generic", theme="blackboard")
     code_to_syntax(dir_to_tabs(dir_hash), language, theme)
   end
+
+
 end
