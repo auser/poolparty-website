@@ -40,6 +40,8 @@ Getting Started
 2. create a hello world clouds.rb 
   maybe fork a project
 
+3. cloud-start
+
 
 What's Next
 ===========
