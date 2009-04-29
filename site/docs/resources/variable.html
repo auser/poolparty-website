@@ -45,14 +45,23 @@
       </div>
       <div id='content'>
         <div class='small right'>
-          <a href="/lib/resources.html">Resources</a>
+          <a href="../../docs/resources"><< Back to resources</a>
         </div>
-        <h3>Line in File</h3>
-        Ensures that the line given is in the file
+        <h3>Variable</h3>
+        Describes a variable to use in a template. One of the powerful hidden features behind puppet is that you can use templating for your templates
         <h3>Usage</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">'</span>line<span class="String">'</span></span>, <span class="String"><span class="String">'</span>/full/file/path.ext)</span></pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_variable</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        <h3>Options</h3>
+        <dd>
+          <dt class='option'><a>name</a><dd>The name of the variable to use in the template</dd></dt>
+          <dt class='option'><a>value</a><dd>The value of the variable in the template</dd></dt>
+        </dd>
+        <p>
+          To use these variables, in your Erb template, reference them like so
+          <pre class="blackboard"><span class="line-numbers">   1 </span> name: <span class="Keyword">&lt;</span><span class="Keyword">%=</span> variablename <span class="String"><span class="String">%&gt;</span></span></pre>
+        </p>
         <h3>Examples</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">&quot;</span>ENABLED=1<span class="String">&quot;</span></span>, <span class="String"><span class="String">&quot;</span>/etc/default/haproxy<span class="String">&quot;</span></span>)</pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_variable</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>name<span class="String">&quot;</span></span>, <span class="Constant"><span class="Constant">:</span>value</span> =&gt; <span class="String"><span class="String">&quot;</span><span class="String"><span class="String">#{</span>cloud<span class="String"><span class="String">.</span><span class="Entity">name</span></span><span class="String">}</span></span><span class="String">&quot;</span></span>)</pre>
       </div>
       <div id='footer'>
         Copyright 2008 - Ari Lerner & Cloudteam@ATTinteractive

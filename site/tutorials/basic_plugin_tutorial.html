@@ -7,19 +7,19 @@
   <body>
     <div id='wrapper'>
       <div id='masthead'>
-        <h2>CitrusByte Labs</h2>
+        <h2>AT&T Interactive R&D</h2>
         <div id='external_links'>
-          <!-- =link (img("/images/site/logo.gif"), "http://citrusbyte.com") -->
+          <!-- =link (img("attir_and_d_logo.gif"), "http://poolpartyrb.com") -->
         </div>
       </div>
       <div class='spacer clear'>
         &nbsp;
       </div>
       <div id='sidebar'>
-        <h3><a href="/"><img alt="Pplogo2" src="/images/site/pplogo2.png"/></a></h3>
+        <h3><a href="../index.html"><img alt="Pplogo2" src="../images/site/pplogo2.png"/></a></h3>
         <ul class='left'>
           <li class='home'>
-            <a href="/">Home</a>
+            <a href="../index.html">Home</a>
           </li>
           <li class='docs'>
             <a href="../docs.html">Docs</a>
@@ -46,16 +46,12 @@
       <div id='content'>
         <h2>Basic plugin tutorial</h2>
         <p>
-          Plugins provide the meat of PoolParty's functionality. We'll dive a little bit into the process of plugin development. They are intended on being very easy and fun to write, so with no further ado...
-        </p>
-        <h3>First steps</h3>
-        <p>
-          You have a bunch of resources (unlimited amount considering you can create your own, but that's out of the scope for this tutorial) at your disposal to use on your server. These are described more in-depth
-          <a href="../lib/Resources">here</a>
-          <small class='note'>Thanks to benburkert, a plugin generator is in progress!</small>
+          A plugin is a container for resources.  Resources are described
+          <a href="../docs/Resources">here.</a>
+          Plugins are very similar to chef recipies.  In fact, you can get the same functionality by writing a chef recipie and including it in your clouds.rb file, has_chef_recipie 'path/to/recipie'
         </p>
         <p>
-          The structure of a gem is standard and should look like
+          The structure of a PoolParty plugin looks like
           <pre class="blackboard"><span class="line-numbers">   1 </span>   plugin_name/&#x000A;<span class="line-numbers">   2 </span>     plugin_name.rb&#x000A;<span class="line-numbers">   3 </span>     spec/&#x000A;<span class="line-numbers">   4 </span>         spec_helper.rb&#x000A;<span class="line-numbers">   5 </span>         plugin_name_spec.rb</pre>
           The spec_helper will be generated for you or looks something like:
           <pre class="blackboard"><span class="line-numbers">   1 </span> [<span class="Support">File</span>.<span class="Entity">dirname</span>(<span class="Variable">__FILE__</span>), <span class="String"><span class="String">&quot;</span><span class="String"><span class="String">#{</span><span class="Support">File</span><span class="String"><span class="String">.</span><span class="Entity">dirname</span></span><span class="String">(</span><span class="Variable">__FILE__</span><span class="String">)</span><span class="String">}</span></span>/..<span class="String">&quot;</span></span>].<span class="Entity">each</span> {|<span class="Variable">dir</span>| <span class="Variable"><span class="Variable">$</span>:</span>.<span class="Entity">unshift</span>(dir) }&#x000A;<span class="line-numbers">   2 </span> <span class="Keyword">require</span> <span class="String"><span class="String">&quot;</span>poolparty<span class="String">&quot;</span></span>&#x000A;<span class="line-numbers">   3 </span> &#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">include</span> <span class="Support">PoolParty</span>::<span class="Variable">Resources</span></pre>
@@ -81,7 +77,7 @@
           First, you'll notice that there are some lines with
           <strong>has_package</strong>
           This tells your nodes and instances that they make sure they have these packages and if not, that they should be installed (installed with the preferred package manager). These are called "Resources." There is a list of the available
-          <a href="/lib/resources.html">Resources</a>
+          <a href="../docsresources.html">docs/Resources</a>
           here. Note that they can be preceeded by either has_ or does_not_have_, which does exactly what it sounds like. has_ sends a present notice to the resource and does_not_have_ sends an absent notice to the resource.
         </p>
         <h3>Setup</h3>
@@ -114,9 +110,8 @@
         </p>
       </div>
       <div id='footer'>
-        Copyright 2008 - Ari Lerner
+        Copyright 2008 - Ari Lerner & Cloudteam@ATTinteractive
         <br />
-        <a href='http://citrusbyte.com'>CitrusByte</a>
         <script type='text/javascript'>
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
           document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

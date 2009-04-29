@@ -45,14 +45,21 @@
       </div>
       <div id='content'>
         <div class='small right'>
-          <a href="/lib/resources.html">Resources</a>
+          <a href="../../docs/resources"><< Back to resources</a>
         </div>
-        <h3>Line in File</h3>
-        Ensures that the line given is in the file
+        <h3>Exec</h3>
+        Ensure a command is run on the instances
         <h3>Usage</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">'</span>line<span class="String">'</span></span>, <span class="String"><span class="String">'</span>/full/file/path.ext)</span></pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_exec</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        <h3>Options</h3>
+        <dd>
+          <dt class='option'><a>name</a><dd>The name of your exec. This is optional, but nice for debugging purposes</dd></dt>
+          <dt class='option'><a>cwd</a><dd>Current working directory to execute the command (optional)</dd></dt>
+          <dt class='option'><a>command</a><dd>This describes the command to run</dd></dt>
+          <dt class='option'><a>path</a><dd>The path to run the command with (optional)</dd></dt>
+        </dd>
         <h3>Examples</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">&quot;</span>ENABLED=1<span class="String">&quot;</span></span>, <span class="String"><span class="String">&quot;</span>/etc/default/haproxy<span class="String">&quot;</span></span>)</pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_exec</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>start messenger<span class="String">'</span></span>, <span class="Constant"><span class="Constant">:</span>command</span> =&gt; <span class="String"><span class="String">'</span>server-start-node<span class="String">'</span></span>, <span class="Constant"><span class="Constant">:</span>requires</span> =&gt; <span class="Entity">get_gempackage</span>(<span class="String"><span class="String">'</span>poolparty-latest<span class="String">'</span></span>, <span class="Constant"><span class="Constant">:</span>onlyif</span> =&gt; <span class="String"><span class="String">'</span>ps aux | grep beam | grep master<span class="String">'</span></span>)</pre>
       </div>
       <div id='footer'>
         Copyright 2008 - Ari Lerner & Cloudteam@ATTinteractive

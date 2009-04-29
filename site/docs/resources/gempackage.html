@@ -45,14 +45,21 @@
       </div>
       <div id='content'>
         <div class='small right'>
-          <a href="/lib/resources.html">Resources</a>
+          <a href="../../docs/resources"><< Back to resources</a>
         </div>
-        <h3>Line in File</h3>
-        Ensures that the line given is in the file
+        <h3>Gempackage</h3>
+        Gempackages describe distributed gems on the cloud. The gem is only downloaded once and then hosted on the master if a download url is given.
         <h3>Usage</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">'</span>line<span class="String">'</span></span>, <span class="String"><span class="String">'</span>/full/file/path.ext)</span></pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_gempackage</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        <h3>Options</h3>
+        <dd>
+          <dt class='option'><a>name</a><dd>The gem name</dd></dt>
+          <dt class='option'><a>download_url</a><dd>The location of the gem to download and server across the instances</dd></dt>
+          <dt class='option'><a>version</a><dd>The gem version requirement (optional and useless if download_url is given)</dd></dt>
+          <dt class='option'><a>source</a><dd>The gem source (optional and useless matter if download_url is given)</dd></dt>
+        </dd>
         <h3>Examples</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_line_in_file</span>(<span class="String"><span class="String">&quot;</span>ENABLED=1<span class="String">&quot;</span></span>, <span class="String"><span class="String">&quot;</span>/etc/default/haproxy<span class="String">&quot;</span></span>)</pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_gempackage</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>rake<span class="String">'</span></span>, &#x000A;<span class="line-numbers">   2 </span> 	<span class="Constant"><span class="Constant">:</span>download_url</span> =&gt; <span class="String"><span class="String">'</span>http://rubyforge.org/frs/download.php/43954/rake-0.8.3.gem<span class="String">'</span></span>)</pre>
       </div>
       <div id='footer'>
         Copyright 2008 - Ari Lerner & Cloudteam@ATTinteractive

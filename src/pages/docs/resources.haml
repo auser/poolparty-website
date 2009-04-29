@@ -1,0 +1,36 @@
+%h2 PoolParty resources
+
+%p
+  Resources are items that poolparty can make available in your clouds. Resources are used in the cloud definition file, clouds.rb, and in Plugins. Plugins are collections of resources.
+%p
+  %b All of these resources can be defined as has_resource and does_not_have_resource:
+  %ul
+    %li has_
+    For example has_file(...)
+    %li does_not_have_
+    For example: does_not_have_file(...)
+
+%h3 Resources
+%p
+  %ul
+    %li=link "has_file", "docs/resources/file"
+    %li=link "has_package", "docs/resources/package"
+    
+    %li=link "has_gempackage", "docs/resources/gempackage"
+    %li=link "has_exec", "docs/resources/exec"
+    %li=link "has_variable (for templates)", "docs/resources/variable"
+    %li=link "has_line_in_file", "docs/resources/line_in_file"
+    %li has_remotefile
+    %li=link "hash_cron", "docs/resources/cron"
+    %li has_host
+    %li has_service
+    %li has_symlink
+    %li has_directory
+    %li=link "has_deploy_directory", "docs/resources/deploy_directory"
+    
+    %li mount
+
+%h3 Helper methods
+%p
+  %ul
+    %li execute_if

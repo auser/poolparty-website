@@ -1,9 +1,9 @@
-pool :app do
-  plugin_directory "#{File.dirname(__FILE__)}/plugins"
+pool :party do
   instances 2..5
   
-  cloud :app do
-    
+  cloud :hello do
+    has_file '/etc/motd',           :content=>'Welcome to your cloud!'
+    has_file '/var/www/index.html', :content=>"Hello World"
   end
 
 end
