@@ -1,7 +1,24 @@
 Notes
 =====
-
 This file is documentation about the documentation
+
+
+TODO
+====
+* simple getting started cloud.rb
+* define cloud start, provision, configure - what is the reason order and elements of each? / what does the bootstrap and provisioning process look like
+* what is chef? how does it work
+
+* why use PP
+  * why is PP better than chef alone?
+* purpose of PP
+* the core team
+* pp theory - homogenious nodes
+* idiomatic PP
+* PP family of gems and what they do
+
+DONE
+=====
 
 amazon cloud terminology
   * ec2
@@ -9,21 +26,11 @@ amazon cloud terminology
 pp terminology
   * provision
   * remoter base
-see Arch page
+  see Arch page
 
-sinatra like introduction
-simple getting started cloud.rb
+simple introduction
 step-by-step vmware
 
-define cloud start, provision, configure - what is the reason order and elements of each?
-what is chef? how does it work
-what does the bootstrap and provisioning process look like
-why is PP better than chef alone?
-purpose of PP
-the core team
-idiomatic PP
-pp theory - homogenious nodes
-PP family of gems and what they do
 collection of all documentation
 
 Getting Started

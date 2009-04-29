@@ -8,29 +8,51 @@
   %a{:href=> "http://wiki.github.com/auser/poolparty"} http://wiki.github.com/auser/poolparty
 
 %a{:name => "learning_track"}
-%h2 Learning track
+%h2 Learning PoolParty
 %p
   Just getting started with PoolParty? The following pages are designed to be the first few articles you read when just starting out using PoolParty (PP)
   %ul.learning-track
     %li 
       =link "PoolParty terminology:", "language.html"
       Understanding the language of PoolParty is an important step in being able to deploy clouds. Checkout this page to learn about a few common terms used in PP.
+
     %li
-      =link "Understanding Resources", "docs/resources.html"
+      =link "Understanding the bootstrap and provisioning process:", "provisioning_process.html"
+      What happens when I type 
+      %tt cloud-start
+      ? What is the difference between
+      %tt cloud-bootstrap
+      ,
+      %tt cloud-provision
+      , and
+      %tt cloud-configure
+      ? PP translates these simple commands into a large number of commands that are executed on your nodes. Read this to learn about the bootstrap and provisioning process.
+
+    %li
+      =link "Understanding Resources:", "docs/resources.html"
       Resources are the meat and most interesting part of any deployment. This page will help you understand what resources are and how to use them.
 
+    %li 
+      =link "What is Chef?:", "docs/chef.html"
+      Chef is PP's default 
+      =link "dependency resolver.", "language.html#dependency%20resolver"
+      Your 
+      %tt clouds.rb
+      is translated by PP into Chef 
+      =link "recipes.",  "language.html#recipe"
+      Chef then uses those recipes to 
+      =link "provision", "language.html#provision"
+      your 
+      =link "instances.", "language.html#instance"
+
     %li
-      =link "Using the <tt>cloud</tt> and <tt>pool</tt> binaries", "docs/cloud_speak"
+      =link "Using the <tt>cloud</tt> and <tt>pool</tt> binaries:", "docs/cloud_speak.html"
       PP installs a number of intuitive binary commands that allow you to 'speak' to your cloud. This page goes over some of the things you can do with those binaries.
 
-
-
-
-
-
-
-
-
+    %li
+      =link "The PoolParty family of gems:", "docs/family_jewels.html"
+      %tt suitcase, butterfly, parenting, dslify;
+      What are all these gems and what do they do? Read on to find out.
 
 
 
