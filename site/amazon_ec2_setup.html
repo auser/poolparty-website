@@ -3,6 +3,7 @@
   <head>
     <title>PoolParty!</title>
     <link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/blackboard.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/classes.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/header.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/navmenu.css" media="all" rel="stylesheet" type="text/css"/><link href="stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+    
   </head>
   <body>
     <div id='wrapper'>
@@ -65,47 +66,46 @@
           <h3>
             Sign up
           </h3>
-          <ol>
-            <li>
-              Navigate to
-              <a href='http://aws.amazon.com/'>
-                Amazon's aws page
-              </a>
-              <br />
-              and click on the
-              <a href='http://www.amazon.com/gp/aws/registration/registration-form.html'>
-                Getting started
-              </a>
-              link. If you already have an aws account, log in and skip the next step.
-            </li>
-            <li>
-              Sign up
-            </li>
-            <li>
-              Once you've signed up or signed in, hover over the product's menu and click on
-              <a href='http://aws.amazon.com/ec2/'>
-                Elastic Computing Cloud
-              </a>
-            </li>
-            <li>
-              Then, click on the Sign up for Amazon EC2 button to sign up for the ec2 service
-            </li>
-            <li>
-              Now, once you have access to ec2, get your access identifiers by hovering over Your Account in the menu and clicking on Access Identifiers
-            </li>
-            <li>
-              Scroll down the page and find the box titled "Access Key ID and Secret Access Key," In the box, you should see a box titled "Your Access Key ID." Make note of this string.
-            </li>
-            <li>
-              Scroll down a little further and find the box titled "Your Secret Access Key." This box is hidden for security reasons, so you'll have to click on the show link. Make note of this string as well.
-              <br />
-              I like to copy and paste the identifiers into a temporary location so I don't have to navigate to the
-              <span class='caps'>
-                AWS
-              </span>
-              page constantly.
-            </li>
-          </ol>
+          <div class='tutorial'>
+            <ol>
+              <li>
+                Navigate to
+                <a href="http://aws.amazon.com/">Amazon's aws page</a>
+                and click on the
+                <a href="http://www.amazon.com/gp/aws/registration/registration-form.html">Getting started</a>
+                link. If you already have an aws account, log in and skip the next step.
+              </li>
+              <div class='right'>
+                <a href="http://www.amazon.com/gp/aws/registration/registration-form.html"><img alt="Signup" src="images/tutorials/ec2/signup.png"/></a>
+              </div>
+              <li>
+                Sign up and validate your account
+              </li>
+              <li>
+                Once you've signed up or signed in, hover over the product's menu and click on Elastic Computing Cloud.
+                <a href="http://aws.amazon.com/ec2/"><img alt="Service ec2" src="images/tutorials/ec2/service_ec2.png"/></a>
+              </li>
+              <li>
+                Then, click on the Sign up for Amazon EC2 button to sign up for the ec2 service
+                <img alt="Ec2 button" src="images/tutorials/ec2/ec2_button.png"/>
+              </li>
+              <li>
+                Now, once you have access to ec2, get your access identifiers by hovering over Your Account in the menu and clicking on Access Identifiers
+                <img alt="Access ids" src="images/tutorials/ec2/access_ids.png"/>
+              </li>
+              <li>
+                Scroll down the page and find the box titled "Access Key ID and Secret Access Key," In the box, you should see a box titled "Your Access Key ID." Make note of this string.
+                <img alt="Access key id" src="images/tutorials/ec2/access_key_id.png"/>
+              </li>
+              <li>
+                Scroll down a little further and find the box titled "Your Secret Access Key." This box is hidden for security reasons, so you'll have to click on the show link. Make note of this string as well.
+                <img alt="Secret access key id" src="images/tutorials/ec2/secret_access_key_id.png"/>
+              </li>
+            </ol>
+            <div class='clear'>
+              I like to copy and paste the identifiers into a temporary location so I don't have to navigate to the AWS page constantly.
+            </div>
+          </div>
           <h3>
             Setup
           </h3>

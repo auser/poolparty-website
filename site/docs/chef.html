@@ -3,6 +3,7 @@
   <head>
     <title>PoolParty!</title>
     <link href="../stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/blackboard.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/classes.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/header.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/navmenu.css" media="all" rel="stylesheet" type="text/css"/><link href="../stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+    
   </head>
   <body>
     <div id='wrapper'>
@@ -44,7 +45,55 @@
         &nbsp;
       </div>
       <div id='content'>
-        
+        <h2>Chef Itself</h2>
+        <p>
+          From the Chef website:
+          <blockquote>
+            Chef is a systems integration framework, built to bring the benefits of configuration management to your entire infrastructure.
+          </blockquote>
+        </p>
+        Chef Links:
+        <ul>
+          <li>
+            Chef homepage:
+            <a href="http://wiki.opscode.com/display/chef/Home">http://wiki.opscode.com/display/chef/Home</a>
+          </li>
+          <li>
+            Github repo:
+            <a href="http://github.com/opscode/chef/tree/master">http://github.com/opscode/chef/tree/master</a>
+          </li>
+        </ul>
+        <h2>
+          Chef and PoolParty
+        </h2>
+        <p>
+          Lets start off with a basic example:
+          <pre class="blackboard"><span class="line-numbers">   1 </span> chef <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span>   include_recipes <span class="String"><span class="String">&quot;</span>~/.poolparty/chef/cookbooks/*<span class="String">&quot;</span></span>&#x000A;<span class="line-numbers">   3 </span>   recipe <span class="String"><span class="String">&quot;</span><span class="String"><span class="String">#{</span><span class="Support">File</span><span class="String"><span class="String">.</span><span class="Entity">dirname</span></span><span class="String">(</span><span class="Variable">__FILE__</span><span class="String">)</span><span class="String">}</span></span>/examples/fairchild_chef.rb<span class="String">&quot;</span></span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        </p>
+        <p>
+          <tt>include_recipes</tt>
+          specifies a glob of
+          <a href="../cookbooks.html">cookbooks</a>
+          that will be placed into your
+          <a href="../suitcase.html">suitcase</a>
+          at time of deployment. These cookbooks are then made
+          <em>available</em>
+          to your recipes
+        </p>
+        <p>
+          <tt>recipe</tt>
+          specifes a particular
+          <a href="../recipe.html">recipe</a>
+          that you want to use when
+          <a href="../configuring.html">configuring</a>
+          your
+          <a href="../instances.html">instances.</a>
+          Typically you specify only
+          <strong>one</strong>
+          recipe in your
+          <tt>clouds.rb</tt>
+          and this recipe calls as many recipes as needed.
+        </p>
       </div>
       <div id='footer'>
         Copyright 2008 - Ari Lerner & Cloudteam@ATTinteractive
