@@ -5,18 +5,17 @@ This file is documentation about the documentation
 TODO
 ====
 # high
-* define cloud start, provision, configure - what is the reason order and elements of each? / what does the bootstrap and provisioning process look like
 
 # med high
-* amazon terminology page
-* lib/docs resources
 
 # med
 * pp overview / purpose of PP / pp theory - homogenious nodes
-* PP family of gems and what they do
+
 * give tutorials the once-over
 * plugins page is wrong
 * look at examples page
+* resources page
+* site map
 
 # low
 * why use PP / why is PP better than chef alone?
@@ -27,9 +26,13 @@ TODO
 
 DONE
 =====
+* define cloud start, provision, configure - what is the reason order and elements of each? / what does the bootstrap and provisioning process look like
 * PP skeleton project / simple getting started cloud.rb
 * ec2 setup
 * what is chef? how does it work
+* amazon terminology page
+* lib/docs resources
+* PP family of gems and what they do
 
 pp terminology
   * provision
