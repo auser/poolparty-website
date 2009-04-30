@@ -50,12 +50,21 @@
   Typical EC2 instance IPs are dynamic and assigned at boot time. Elastic IPs provide a way for you to assign static IPs to nodes.
 
 =define_term "Security Groups" do
-  an
-
-=define_term "Keypairs" do
-  an
+  Amazon has a strict firewall between the world and your nodes and between nodes within EC2. Each instance is assigned to one (or more?) security group. Each security group has its own set of security policies. These policies can be controlled by using the
+  %tt ec2-authorize
+  binary.
+  
+  In the 
+  %tt default
+  security group, all nodes have unlimited (network) access to each other. Everything else is turned off. (This includes port 22 for 
+  %tt ssh 
+  and port 80 for 
+  %tt http
+  )
 
 =define_term "Cloud Front" do
-  an
+  Amazon's pay-as-you-go "self service" CDN. You upload files to S3 and then they are available through public URLs.
 
+=define_term "Keypairs" do
+  todo 
 
