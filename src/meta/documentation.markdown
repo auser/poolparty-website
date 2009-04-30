@@ -4,6 +4,7 @@ This file is documentation about the documentation
 
 questions:
 * http://localhost:3000/docs/resources/index.html - is this page relevent . needs serious help. maybe just link to rdoc?
+* plugins page help - get rid of
 
 TODO
 ====
