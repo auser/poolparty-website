@@ -6,7 +6,6 @@ TODO
 ====
 # high
 * define cloud start, provision, configure - what is the reason order and elements of each? / what does the bootstrap and provisioning process look like
-* what is chef? how does it work
 
 # med high
 * amazon terminology page
@@ -23,10 +22,14 @@ TODO
 * why use PP / why is PP better than chef alone?
 * the core team
 
+# other
+* reenable google analytics
+
 DONE
 =====
 * PP skeleton project / simple getting started cloud.rb
 * ec2 setup
+* what is chef? how does it work
 
 pp terminology
   * provision
