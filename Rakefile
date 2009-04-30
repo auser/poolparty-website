@@ -1,7 +1,12 @@
 namespace :live do
-  desc "check all the links (todo)"
+  desc "check all the links. Checks GITHUB_USER or your user"
   task :check_links do
-    puts "todo"
+    linkchecker_bin = `which linkchecker`.strip
+    unless $? == 0
+      raise "linkchecker utility required. See: http://superb-east.dl.sourceforge.net/sourceforge/linkchecker/LinkChecker-5.0.2.tar.gz"
+    end
+    github_user = ENV['GITHUB_USER'] || `/usr/bin/github info | grep "You are" | awk {'print $3'}`.strip
+    sh "#{linkchecker_bin} -o text -F text http://#{github_user}.github.com/poolparty/" rescue nil
   end
 end
 
@@ -24,3 +29,4 @@ EOCMD
     sh cmds
   end
 end
+
