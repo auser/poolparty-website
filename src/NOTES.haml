@@ -1,0 +1,9 @@
+To deploy:
+export POOLPARTY_SRC=/path/to/pp
+export POOLPARTY_WEB=/path/to/pp-website
+
+rake publish:prepare
+
+cd $POOLPARTY_SRC
+rake rerdoc
+rsync -av $POOLPARTY_SRC/rdoc $POOLPARTY_WEB
