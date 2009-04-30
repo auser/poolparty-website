@@ -47,12 +47,12 @@
       </div>
       <div id='content'>
         <div class='small right'>
-          <a href="../../docs/resources"><< Back to resources</a>
+          <a href="/lib/resources.html">Resources</a>
         </div>
-        <h3>File</h3>
-        The file resource is used to describe a file that should be present on all of the instances.
+        <h3>Remote File</h3>
+        The remotefile resource is used to describe a file that is hosted on the master instance and propagated to the other instances
         <h3>Usage</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_file</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_remotefile</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
         <h3>Options</h3>
         <ul>
           <dt class='option'><a>name</a><dd>Describe the location of the file with the name</dd></dt>
@@ -67,7 +67,7 @@
           <dt class='option'><a>template</a><dd>The file contents are described with the template. The location given must be readable</dd></dt>
         </ul>
         <h3>Example</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_file</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>/etc/motd<span class="String">'</span></span>, <span class="Constant"><span class="Constant">:</span>content</span> =&gt; <span class="String"><span class="String">'</span>Hey and welcome to your node today!<span class="String">'</span></span>)</pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_remotefile</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">&quot;</span>/etc/haproxy.cfg<span class="String">&quot;</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> 	mode <span class="Constant">644</span>&#x000A;<span class="line-numbers">   3 </span> 	template <span class="Support">File</span>.<span class="Entity">join</span>(<span class="Support">File</span>.<span class="Entity">dirname</span>(<span class="Variable">__FILE__</span>), <span class="String"><span class="String">&quot;</span>..<span class="String">&quot;</span></span>, <span class="String"><span class="String">&quot;</span>templates/haproxy.conf<span class="String">&quot;</span></span>)&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
       </div>
       <div id='footer'>
         Copyright &copy; 2008-2009 - Ari Lerner and Cloudteam at AT&T Interactive

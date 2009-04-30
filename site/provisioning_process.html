@@ -46,23 +46,61 @@
         &nbsp;
       </div>
       <div id='content'>
-        <h2>Community</h2>
-        <div class='tip-box'><div class='crab-wrapper'><img src='http://fairchild.github.com/poolparty/images/site/i/examples.png' class='crab'/></div>The IRC channel
-        <tt>#poolparty</tt>
-        is active and friendly. If you are able to use IRC, come on in!
-        <a href="http://widget.mibbit.com/?settings=b5a91d807861e012ebea4a56f391f35c&server=simmons.freenode.net&chi;annel=%23poolpartyrb" target="new">Launch IRC in your browser</a></div>
-        <div class='callout'>
-          New to IRC? No problem. Click to
-          <a href="http://widget.mibbit.com/?settings=b5a91d807861e012ebea4a56f391f35c&server=simmons.freenode.net&chi;annel=%23poolpartyrb" target="new">launch #poolpartyrb IRC channel in your browser!</a>
-        </div>
-        <ul>
-          <li><a href="http://groups.google.com/group/poolpartyrb/">Google Groups</a></li>
+        <h1>Bootstrap and Provisioning</h1>
+        <p>
+          Here is an outline of the bootstrap and provisioning process:
+        </p>
+        <ul class='bootstrap'>
           <li>
-            <a href="irc://irc.freenode.net/poolpartyrb">#poolpartyrb</a>
-            on irc.freenode.net
+            cloud-start
+            <ul>
+              <li>
+                launch
+                <a href="language.html#instance">instance</a>
+                <ul>
+                  <li>
+                    calls launch_new_instance! on
+                    <a href="language.html#remoter base">remoter_base</a>
+                    (ec2, vmware, etc.)
+                  </li>
+                  <li>waits for an ip to be assigned</li>
+                  <li>waits for ssh availability</li>
+                </ul>
+              </li>
+              <li>
+                cloud-provision
+                <ul>
+                  <li>
+                    bootstrap
+                    <ul>
+                      <li>compiles all necessary dependencies for bootstrap</li>
+                      <li>rsync's the dependencies</li>
+                      <li>runs array of commands that bootstraps the machine</li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    configure
+                    <ul>
+                      <li>compiles and packages compilation of cookbooks and recipes</li>
+                      <li>rsync's the package</li>
+                      <li>
+                        runs
+                        <a href="language.html#dependency resolver">dependency_resolver</a>
+                        (chef/puppet)
+                      </li>
+                      <li>
+                        runs verify blocks to verify the cloud has launched and passes verification
+                        <ul></ul>
+                        <li>reruns configure if fails</li>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </li>
-          <li><a href="http://github.com/auser/poolparty/issues">GitHub issue tracker</a></li>
-          <li><a href="http://irclogger.com/poolpartyrb/">Archived irc discussions</a></li>
         </ul>
       </div>
       <div id='footer'>

@@ -47,18 +47,19 @@
       </div>
       <div id='content'>
         <div class='small right'>
-          <a href="../../docs/resources"><< Back to resources</a>
+          <a href="/lib/resources.html">Resources</a>
         </div>
-        <h3>_____</h3>
-        Description
+        <h3>Ssh Key</h3>
+        The sshkey resource specifies an ssh key that should be distributed on all the nodes
         <h3>Usage</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_sshkey</span>(<span class="Constant"><span class="Constant">:</span>key</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
         <h3>Options</h3>
         <dd>
-          <dt class='option'><a></a><dd></dd></dt>
+          <dt class='option'><a>key</a><dd>The key content for the ssh key</dd></dt>
+          <dt class='option'><a>target</a><dd>The location of the ssh key</dd></dt>
         </dd>
         <h3>Examples</h3>
-        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_</span>(<span class="Constant"><span class="Constant">:</span>name</span> =&gt; <span class="String"><span class="String">'</span>...<span class="String">'</span></span>) <span class="Keyword">do</span>&#x000A;<span class="line-numbers">   2 </span> <span class="Comment">	<span class="Comment">#</span> More options. </span>&#x000A;<span class="line-numbers">   3 </span> <span class="Comment">	<span class="Comment">#</span> This block is optional</span>&#x000A;<span class="line-numbers">   4 </span> <span class="Keyword">end</span></pre>
+        <pre class="blackboard"><span class="line-numbers">   1 </span> <span class="Entity">has_sshkey</span>(<span class="Constant"><span class="Constant">:</span>key</span> =&gt; <span class="String"><span class="String">&quot;</span>ABIGLONGSTRINGOFDIGETS<span class="String">&quot;</span></span>, <span class="Constant"><span class="Constant">:</span>target</span> =&gt; <span class="String"><span class="String">&quot;</span>/root/.ssh/key_file<span class="String">&quot;</span></span>)</pre>
       </div>
       <div id='footer'>
         Copyright &copy; 2008-2009 - Ari Lerner and Cloudteam at AT&T Interactive
