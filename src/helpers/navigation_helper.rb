@@ -7,20 +7,20 @@ module NavigationHelper
   @@pages = []
   @@page_index = {}
   @@current_page = nil
-  INDEX_PATTERN = /index\.(haml|html)$/i
-  STRING_PATTERN = /('(\w|\s)*')|("(\w|\s)*")/
-  FIXNUM_PATTERN = /-?\d+/
-  LINK_TEXT = "link_text"
-  NAVIGATION_INDEX = "nav_index"
-  DEFAULT_NAV_INDEX = 0
-  INDEX_CHOP = true
-  EXTENSION_CHOP = true
-  DIV_WRAP = true
+  INDEX_PATTERN = /index\.(haml|html)$/i unless defined?(INDEX_PATTERN)
+  STRING_PATTERN = /('(\w|\s)*')|("(\w|\s)*")/ unless defined?(STRING_PATTERN)
+  FIXNUM_PATTERN = /-?\d+/ unless defined?(FIXNUM_PATTERN)
+  LINK_TEXT = "link_text" unless defined?(LINK_TEXT)
+  NAVIGATION_INDEX = "nav_index" unless defined?(NAVIGATION_INDEX)
+  DEFAULT_NAV_INDEX = 0 unless defined?(DEFAULT_NAV_INDEX)
+  INDEX_CHOP = true unless defined?(INDEX_CHOP)
+  EXTENSION_CHOP = true unless defined?(EXTENSION_CHOP)
+  DIV_WRAP = true unless defined?(DIV_WRAP)
   # non english sites may want to override "home" as they see fit.
-  HOME = "home"
+  HOME = "home" unless defined?(HOME)
   # constants used in building navigation
-  BREAD_SEPARATORS = true
-  CURRENT_AS_SPAN = true  # When false, the current item in a navigation is a hyperlink to current page (duh!)
+  BREAD_SEPARATORS = true unless defined?(BREAD_SEPARATORS)
+  CURRENT_AS_SPAN = true  unless defined?(CURRENT_AS_SPAN) # When false, the current item in a navigation is a hyperlink to current page (duh!)
   @@breadcrumb = false  #when true, only ancestors are displayed
   @@start_depth = 1
   @@descendants = 0
