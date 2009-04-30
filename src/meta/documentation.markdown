@@ -5,9 +5,12 @@ This file is documentation about the documentation
 TODO
 ====
 # high
-* PP skeleton project / simple getting started cloud.rb
 * define cloud start, provision, configure - what is the reason order and elements of each? / what does the bootstrap and provisioning process look like
 * what is chef? how does it work
+
+# med high
+* amazon terminology page
+* lib/docs resources
 
 # med
 * pp overview / purpose of PP / pp theory - homogenious nodes
@@ -22,9 +25,8 @@ TODO
 
 DONE
 =====
-
-amazon cloud terminology
-  * ec2
+* PP skeleton project / simple getting started cloud.rb
+* ec2 setup
 
 pp terminology
   * provision
