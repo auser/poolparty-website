@@ -46,6 +46,9 @@
 		    $(document).click(function() {
 		        _closeSlide();
 		    });
+
+ 
+
 		    $("#pageslide-slide-wrap").click(function(){ return false; });
 		    
 		    // Callback events for window resizing
@@ -72,6 +75,15 @@
 		            $("#pageslide-content").html(data)
 		                                   .queue( function() {
 		                                       settings.loaded();
+
+                                               // add a close button *within* the loaded element
+                                                var closeButton = $("#pageslide-close");
+                                                if(closeButton && closeButton.length > 0) { // may not exist
+                                                  closeButton.click(function() {
+                                                      _closeSlide();
+                                                  });
+                                                }
+
 		                                       $(this).dequeue();
 		                                    });
 		        }
