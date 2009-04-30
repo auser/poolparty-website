@@ -1,2 +1,44 @@
-%h1
-  define cloud start, provision, configure - what is the reason order and elements of each? / what does the bootstrap and provisioning process look like
+%h1 Bootstrap and Provisioning
+
+%p
+  Here is an outline of the bootstrap and provisioning process:
+
+%ul.bootstrap
+  %li 
+    cloud-start
+    %ul
+      %li 
+        launch 
+        =link "instance", "language.html#instance"
+        %ul
+          %li 
+            calls launch_new_instance! on 
+            =link "remoter_base", "language.html#remoter base"
+            (ec2, vmware, etc.)
+          %li waits for an ip to be assigned
+          %li waits for ssh availability
+      %li 
+        cloud-provision
+        %ul
+          %li 
+            bootstrap
+            %ul
+              %li compiles all necessary dependencies for bootstrap
+              %li rsync's the dependencies
+              %li runs array of commands that bootstraps the machine
+        %ul 
+          %li 
+            configure
+            %ul
+              %li compiles and packages compilation of cookbooks and recipes
+              %li rsync's the package
+              %li 
+                runs 
+                =link "dependency_resolver", "language.html#dependency resolver"
+                (chef/puppet)
+              %li 
+                runs verify blocks to verify the cloud has launched and passes verification
+                %ul
+                %li reruns configure if fails
+
+
