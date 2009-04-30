@@ -1,0 +1,61 @@
+%h1 Understanding Amazon EC2
+
+.callout
+  Looking for information on how to 
+  %strong setup 
+  EC2? 
+  =link "Check here", "amazon_ec2_setup.html"
+
+%p
+  This page only serves as a 
+  %em brief
+  overview of Amazon EC2 and related technologies. For in-depth information, see the links below:
+
+%h2 
+  External Links
+%p
+  %ul.learning-track
+    %li
+      =link "AWS Documentation", "http://aws.amazon.com/documentation/"
+    %li
+      =link "Amazon EC2 Getting Started Guide", "http://docs.amazonwebservices.com/AWSEC2/latest/GettingStartedGuide/"
+
+%h2 Terminology 
+
+.callout
+  For PoolParty and general cloud computing terminology 
+  =link "Check here", "language.html"
+
+=define_term "EC2" do
+  A platform for launching machine 
+  =link "instances", "language.html#instance"
+
+=define_term "AMI" do
+  Amazon Machine Image. Conceptually similar to a Xen or VMware image. There are hundreds of pre-built AMI's for you to choose from. PoolParty uses ec2ubuntu.
+
+=define_term "S3" do
+  Simple Storage Service (S3). Persistent data storage. Data is stored in 'buckets'. EC2 
+  %strong does not
+  use S3 
+  %em directly
+
+=define_term "EBS" do
+  Elastic Block Store. Persistent disks for EC2 instances. Can store 
+  %em snapshots
+  on S3. Its fast but only mounts to
+  %strong one
+  instance at a time. i.e. It is not a SAN.
+
+=define_term "Elastic IP" do
+  Typical EC2 instance IPs are dynamic and assigned at boot time. Elastic IPs provide a way for you to assign static IPs to nodes.
+
+=define_term "Security Groups" do
+  an
+
+=define_term "Keypairs" do
+  an
+
+=define_term "Cloud Front" do
+  an
+
+
