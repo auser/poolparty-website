@@ -1,5 +1,36 @@
-/ ./src/pages/lib/resources/*
-/ 2
-/The navigation_helper requires that each directory contains a file called index.haml. This file was automatically generated, so be sure to replace this content with something meaningful, or you'll have egg on your face.
--@title ='Navigation helper'
-%p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+%h2 PoolParty resources
+
+%p
+  Resources are items that poolparty can make available in your clouds. Resources are used in the cloud definition file, clouds.rb, and in Plugins. Plugins are collections of resources.
+%p
+  %b All of these resources can be defined as has_resource and does_not_have_resource:
+  %ul
+    %li has_
+    For example has_file(...)
+    %li does_not_have_
+    For example: does_not_have_file(...)
+
+%h3 Resources
+%p
+  %ul
+    %li=link "has_file", "docs/resources/file"
+    %li=link "has_package", "docs/resources/package"
+    
+    %li=link "has_gempackage", "docs/resources/gempackage"
+    %li=link "has_exec", "docs/resources/exec"
+    %li=link "has_variable (for templates)", "docs/resources/variable"
+    %li=link "has_line_in_file", "docs/resources/line_in_file"
+    %li has_remotefile
+    %li=link "hash_cron", "docs/resources/cron"
+    %li has_host
+    %li has_service
+    %li has_symlink
+    %li has_directory
+    %li=link "has_deploy_directory", "docs/resources/deploy_directory"
+    
+    %li mount
+
+%h3 Helper methods
+%p
+  %ul
+    %li execute_if
