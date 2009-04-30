@@ -11,37 +11,40 @@
     %span.caps
       AMI
     (support for other OSes is already in progress)
+
   %h3
     Sign up
-  %ol
-    %li
-      Navigate to
-      %a{ :href => "http://aws.amazon.com/" }
-        Amazon's aws page
-      %br
-      and click on the
-      %a{ :href => "http://www.amazon.com/gp/aws/registration/registration-form.html" }
-        Getting started
-      link. If you already have an aws account, log in and skip the next step.
-    %li
-      Sign up
-    %li
-      Once you've signed up or signed in, hover over the product's menu and click on
-      %a{ :href => "http://aws.amazon.com/ec2/" }
-        Elastic Computing Cloud
-    %li
-      Then, click on the Sign up for Amazon EC2 button to sign up for the ec2 service
-    %li
-      Now, once you have access to ec2, get your access identifiers by hovering over Your Account in the menu and clicking on Access Identifiers
-    %li
-      Scroll down the page and find the box titled "Access Key ID and Secret Access Key," In the box, you should see a box titled "Your Access Key ID." Make note of this string.
-    %li
-      Scroll down a little further and find the box titled "Your Secret Access Key." This box is hidden for security reasons, so you'll have to click on the show link. Make note of this string as well.
-      %br
-      I like to copy and paste the identifiers into a temporary location so I don't have to navigate to the
-      %span.caps
-        AWS
-      page constantly.
+  .tutorial
+    %ol
+      %li
+        Navigate to 
+        = link "Amazon's aws page", "http://aws.amazon.com/"
+        and click on the
+        =link "Getting started", "http://www.amazon.com/gp/aws/registration/registration-form.html"
+        link. If you already have an aws account, log in and skip the next step.
+      .right
+        =link(img("tutorials/ec2/signup.png"), "http://www.amazon.com/gp/aws/registration/registration-form.html")
+      %li
+        Sign up and validate your account
+      %li
+        Once you've signed up or signed in, hover over the product's menu and click on Elastic Computing Cloud.
+        =link img("tutorials/ec2/service_ec2.png"), "http://aws.amazon.com/ec2/"
+      %li
+        Then, click on the Sign up for Amazon EC2 button to sign up for the ec2 service
+        =img("tutorials/ec2/ec2_button.png")
+      %li
+        Now, once you have access to ec2, get your access identifiers by hovering over Your Account in the menu and clicking on Access Identifiers
+        =img("tutorials/ec2/access_ids.png")
+      %li
+        Scroll down the page and find the box titled "Access Key ID and Secret Access Key," In the box, you should see a box titled "Your Access Key ID." Make note of this string.
+        =img("tutorials/ec2/access_key_id.png")
+      %li
+        Scroll down a little further and find the box titled "Your Secret Access Key." This box is hidden for security reasons, so you'll have to click on the show link. Make note of this string as well.
+        =img("tutorials/ec2/secret_access_key_id.png")    
+    .clear
+      I like to copy and paste the identifiers into a temporary location so I don't have to navigate to the AWS page constantly. 
+
+
   %h3
     Setup
   %p
