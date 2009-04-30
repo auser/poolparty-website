@@ -1,3 +1,5 @@
+%h2 Chef Itself
+
 %p 
   From the Chef website:
   %blockquote
@@ -11,3 +13,36 @@ Chef Links:
   %li 
     Github repo:
     =link "http://github.com/opscode/chef/tree/master", "http://github.com/opscode/chef/tree/master"
+
+%h2 
+  Chef and PoolParty
+
+%p
+  Lets start off with a basic example:
+
+  ~file_to_code("snippets/basic_chef.rb")
+
+%p
+  %tt include_recipes
+  specifies a glob of 
+  =link "cookbooks"
+  that will be placed into your
+  =link "suitcase"
+  at time of deployment. These cookbooks are then made 
+  %em available
+  to your recipes
+
+%p
+  %tt recipe
+  specifes a particular 
+  =link "recipe" 
+  that you want to use when 
+  =link "configuring"
+  your
+  =link "instances."
+  Typically you specify only
+  %strong one
+  recipe in your 
+  %tt clouds.rb
+  and this recipe calls as many recipes as needed.
+
