@@ -41,18 +41,18 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000230">add_optional_enabled_services</a></li>
-              <li><a href="#M000226">dependency_resolver</a></li>
-              <li><a href="#M000228">disable</a></li>
-              <li><a href="#M000227">enable</a></li>
-              <li><a href="#M000229">enabled?</a></li>
+              <li><a href="#M000211">add_optional_enabled_services</a></li>
+              <li><a href="#M000207">dependency_resolver</a></li>
+              <li><a href="#M000209">disable</a></li>
+              <li><a href="#M000208">enable</a></li>
+              <li><a href="#M000210">enabled?</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000230'>
-                <a name='M000230'>      </a>
+              <div class='public-instance method' id='method-M000211'>
+                <a name='M000211'>      </a>
                 <div class='synopsis'>
                   <span class='name'>add_optional_enabled_services</span>
                   <span class='arguments'>()</span>
@@ -64,14 +64,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000230-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000211-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000230-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 29</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_optional_enabled_services</span>&#x000A;      <span class="ruby-identifier">dsl_options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">enabled?</span>(<span class="ruby-identifier">k</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">k</span>)&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000211-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 37</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_optional_enabled_services</span>&#x000A;      <span class="ruby-identifier">dsl_options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">enabled?</span>(<span class="ruby-identifier">k</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">k</span>)&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000226'>
-                <a name='M000226'>      </a>
+              <div class='public-instance method' id='method-M000207'>
+                <a name='M000207'>      </a>
                 <div class='synopsis'>
                   <span class='name'>dependency_resolver</span>
                   <span class='arguments'>(name='puppet')</span>
@@ -87,17 +87,17 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000226-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000207-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000226-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 14</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dependency_resolver</span>(<span class="ruby-identifier">name</span>=<span class="ruby-value str">'puppet'</span>)&#x000A;      <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">preserved_class_constant</span>(<span class="ruby-value str">&quot;Resolver&quot;</span>)&#x000A;      <span class="ruby-identifier">raise</span> <span class="ruby-constant">DependencyResolverException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Unknown resolver&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">klass</span>&#x000A;      <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">:dependency_resolver</span>] = <span class="ruby-identifier">klass</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">:dependency_resolver</span>]&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000207-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 14</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dependency_resolver</span>(<span class="ruby-identifier">name</span>=<span class="ruby-value str">'puppet'</span>)&#x000A;      <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">preserved_class_constant</span>(<span class="ruby-value str">&quot;Resolver&quot;</span>)&#x000A;      <span class="ruby-identifier">raise</span> <span class="ruby-constant">DependencyResolverException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Unknown resolver&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">klass</span>&#x000A;      <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">:dependency_resolver</span>] = <span class="ruby-identifier">klass</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">:dependency_resolver</span>]&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000228'>
-                <a name='M000228'>      </a>
+              <div class='public-instance method' id='method-M000209'>
+                <a name='M000209'>      </a>
                 <div class='synopsis'>
                   <span class='name'>disable</span>
-                  <span class='arguments'>(service)</span>
+                  <span class='arguments'>(*services)</span>
                 </div>
                 <div class='description'>
                   <p>
@@ -105,17 +105,17 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000228-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000209-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000228-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 23</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable</span>(<span class="ruby-identifier">service</span>);<span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">service</span>] = <span class="ruby-identifier">:disabled</span>;<span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000209-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 27</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">services</span>)&#x000A;      <span class="ruby-identifier">services</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">service</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">service</span>] = <span class="ruby-identifier">:disabled</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000227'>
-                <a name='M000227'>      </a>
+              <div class='public-instance method' id='method-M000208'>
+                <a name='M000208'>      </a>
                 <div class='synopsis'>
                   <span class='name'>enable</span>
-                  <span class='arguments'>(service)</span>
+                  <span class='arguments'>(*services)</span>
                 </div>
                 <div class='description'>
                   <p>
@@ -123,14 +123,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000227-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000208-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000227-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 21</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enable</span>(<span class="ruby-identifier">service</span>);<span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">service</span>] = <span class="ruby-identifier">:enabled</span>;<span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000208-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 21</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enable</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">services</span>)&#x000A;      <span class="ruby-identifier">services</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">service</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">service</span>] = <span class="ruby-identifier">:enabled</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000229'>
-                <a name='M000229'>      </a>
+              <div class='public-instance method' id='method-M000210'>
+                <a name='M000210'>      </a>
                 <div class='synopsis'>
                   <span class='name'>enabled?</span>
                   <span class='arguments'>(srv)</span>
@@ -141,10 +141,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000229-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000210-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000229-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 26</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled?</span>(<span class="ruby-identifier">srv</span>);<span class="ruby-identifier">dsl_options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">srv</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">srv</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:enabled</span>;<span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000210-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/cloud_dsl.rb, line 34</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled?</span>(<span class="ruby-identifier">srv</span>);<span class="ruby-identifier">dsl_options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">srv</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">dsl_options</span>[<span class="ruby-identifier">srv</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:enabled</span>;<span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

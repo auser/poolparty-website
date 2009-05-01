@@ -41,23 +41,23 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000292">make_safe</a></li>
+              <li><a href="#M000273">make_safe</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000292'>
-                <a name='M000292'>      </a>
+              <div class='public-instance method' id='method-M000273'>
+                <a name='M000273'>      </a>
                 <div class='synopsis'>
                   <span class='name'>make_safe</span>
                   <span class='arguments'>(meth)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000292-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000273-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000292-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/safe_instance.rb, line 11</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">make_safe</span>(<span class="ruby-identifier">meth</span>)&#x000A;       <span class="ruby-identifier">original_method</span> = <span class="ruby-node">&quot;_unsafe_#{meth}_&quot;</span>&#x000A;       <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">original_method</span>, <span class="ruby-identifier">meth</span>&#x000A;       <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">meth</span>) {<span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">synchronize</span> { <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">original_method</span>) } }&#x000A;       <span class="ruby-keyword kw">self</span>&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000273-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/safe_instance.rb, line 11</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">make_safe</span>(<span class="ruby-identifier">meth</span>)&#x000A;       <span class="ruby-identifier">original_method</span> = <span class="ruby-node">&quot;_unsafe_#{meth}_&quot;</span>&#x000A;       <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">original_method</span>, <span class="ruby-identifier">meth</span>&#x000A;       <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">meth</span>) {<span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">synchronize</span> { <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">original_method</span>) } }&#x000A;       <span class="ruby-keyword kw">self</span>&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

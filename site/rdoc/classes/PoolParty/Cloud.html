@@ -41,9 +41,9 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000251">cloud</a></li>
-              <li><a href="#M000252">clouds</a></li>
-              <li><a href="#M000253">with_cloud</a></li>
+              <li><a href="#M000232">cloud</a></li>
+              <li><a href="#M000233">clouds</a></li>
+              <li><a href="#M000234">with_cloud</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -53,8 +53,8 @@
             </div>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000251'>
-                <a name='M000251'>      </a>
+              <div class='public-instance method' id='method-M000232'>
+                <a name='M000232'>      </a>
                 <div class='synopsis'>
                   <span class='name'>cloud</span>
                   <span class='arguments'>(name, &amp;block)</span>
@@ -65,14 +65,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000251-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000232-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000251-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/cloud.rb, line 7</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cloud</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">clouds</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Cloud</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000232-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/cloud.rb, line 7</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cloud</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">clouds</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Cloud</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000252'>
-                <a name='M000252'>      </a>
+              <div class='public-instance method' id='method-M000233'>
+                <a name='M000233'>      </a>
                 <div class='synopsis'>
                   <span class='name'>clouds</span>
                   <span class='arguments'>()</span>
@@ -83,14 +83,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000252-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000233-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000252-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/cloud.rb, line 12</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clouds</span>&#x000A;      <span class="ruby-identifier">$clouds</span> <span class="ruby-operator">||=</span> {}&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000233-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/cloud.rb, line 12</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clouds</span>&#x000A;      <span class="ruby-identifier">$clouds</span> <span class="ruby-operator">||=</span> {}&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000253'>
-                <a name='M000253'>      </a>
+              <div class='public-instance method' id='method-M000234'>
+                <a name='M000234'>      </a>
                 <div class='synopsis'>
                   <span class='name'>with_cloud</span>
                   <span class='arguments'>(cl, opts={}, &amp;block)</span>
@@ -101,10 +101,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000253-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000234-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000253-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/cloud.rb, line 17</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_cloud</span>(<span class="ruby-identifier">cl</span>, <span class="ruby-identifier">opts</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">raise</span> <span class="ruby-constant">CloudNotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Cloud not found&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">cl</span>&#x000A;      <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">opts</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>&#x000A;      <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">run_in_context</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000234-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/cloud.rb, line 17</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_cloud</span>(<span class="ruby-identifier">cl</span>, <span class="ruby-identifier">opts</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">raise</span> <span class="ruby-constant">CloudNotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Cloud not found&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">cl</span>&#x000A;      <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">opts</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>&#x000A;      <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">run_in_context</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

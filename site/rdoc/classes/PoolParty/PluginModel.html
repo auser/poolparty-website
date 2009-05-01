@@ -41,9 +41,9 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000192">plugin</a></li>
-              <li><a href="#M000194">plugins</a></li>
-              <li><a href="#M000193">register_plugin</a></li>
+              <li><a href="#M000180">plugin</a></li>
+              <li><a href="#M000182">plugins</a></li>
+              <li><a href="#M000181">register_plugin</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -53,41 +53,41 @@
             </div>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000192'>
-                <a name='M000192'>      </a>
+              <div class='public-instance method' id='method-M000180'>
+                <a name='M000180'>      </a>
                 <div class='synopsis'>
                   <span class='name'>plugin</span>
                   <span class='arguments'>(name=:plugin, cloud=nil, &amp;block)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000192-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000180-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000192-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/plugin_model.rb, line 6</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">plugin</span>(<span class="ruby-identifier">name</span>=<span class="ruby-identifier">:plugin</span>, <span class="ruby-identifier">cloud</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">plugins</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">PluginModel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000180-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/plugin_model.rb, line 6</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">plugin</span>(<span class="ruby-identifier">name</span>=<span class="ruby-identifier">:plugin</span>, <span class="ruby-identifier">cloud</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">plugins</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">PluginModel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000194'>
-                <a name='M000194'>      </a>
+              <div class='public-instance method' id='method-M000182'>
+                <a name='M000182'>      </a>
                 <div class='synopsis'>
                   <span class='name'>plugins</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000194-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000182-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000194-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/plugin_model.rb, line 11</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">plugins</span>&#x000A;      <span class="ruby-identifier">$plugins</span> <span class="ruby-operator">||=</span> {}&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000182-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/plugin_model.rb, line 11</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">plugins</span>&#x000A;      <span class="ruby-identifier">$plugins</span> <span class="ruby-operator">||=</span> {}&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000193'>
-                <a name='M000193'>      </a>
+              <div class='public-instance method' id='method-M000181'>
+                <a name='M000181'>      </a>
                 <div class='synopsis'>
                   <span class='name'>register_plugin</span>
                   <span class='arguments'>(name=:plugin, cloud=nil, &amp;block)</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Alias for <a href="PluginModel.html#M000192">plugin</a>
+                  Alias for <a href="PluginModel.html#M000180">plugin</a>
                   </p>
                 </div>
               </div>

@@ -45,12 +45,12 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000239">defaults</a></li>
-              <li><a href="#M000241">new</a></li>
+              <li><a href="#M000220">defaults</a></li>
+              <li><a href="#M000222">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000240">method_missing</a></li>
+              <li><a href="#M000221">method_missing</a></li>
             </ol>
           </div>
           <div id='context'>
@@ -86,35 +86,35 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000239'>
-                <a name='M000239'>      </a>
+              <div class='public-class method' id='method-M000220'>
+                <a name='M000220'>      </a>
                 <div class='synopsis'>
                   <span class='name'>defaults</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000239-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000220-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000239-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/dr_configure.rb, line 13</span>&#x000A;     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">defaults</span>&#x000A;       <span class="ruby-operator">::</span><span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Default</span>.<span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge</span>({&#x000A;         <span class="ruby-identifier">:full_keypair_path</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{ENV[&quot;AWS_KEYPAIR_NAME&quot;]}&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;~/.ssh/id_rsa&quot;</span>,&#x000A;         <span class="ruby-identifier">:installer</span>           =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'apt-get install -y'</span>,&#x000A;         <span class="ruby-identifier">:dependency_resolver</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'chef'</span>,&#x000A;         <span class="ruby-identifier">:invalid_run_count</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>&#x000A;       })&#x000A;     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000220-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/dr_configure.rb, line 13</span>&#x000A;     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">defaults</span>&#x000A;       <span class="ruby-operator">::</span><span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Default</span>.<span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge</span>({&#x000A;         <span class="ruby-identifier">:full_keypair_path</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{ENV[&quot;AWS_KEYPAIR_NAME&quot;]}&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;~/.ssh/id_rsa&quot;</span>,&#x000A;         <span class="ruby-identifier">:installer</span>           =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'apt-get install -y'</span>,&#x000A;         <span class="ruby-identifier">:dependency_resolver</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'chef'</span>,&#x000A;         <span class="ruby-identifier">:invalid_run_count</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>&#x000A;       })&#x000A;     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000241'>
-                <a name='M000241'>      </a>
+              <div class='public-class method' id='method-M000222'>
+                <a name='M000222'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>(host, opts={}, &amp;block)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000241-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000222-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000241-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/dr_configure.rb, line 36</span>&#x000A;     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">opts</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>).<span class="ruby-identifier">to_instance_variables</span>(<span class="ruby-keyword kw">self</span>)&#x000A;       <span class="ruby-ivar">@target_host</span> = <span class="ruby-identifier">host</span>&#x000A;       <span class="ruby-ivar">@configurator</span> = <span class="ruby-node">&quot;::PoolParty::Provision::#{dependency_resolver.capitalize}&quot;</span>.<span class="ruby-identifier">constantize</span>&#x000A;       <span class="ruby-ivar">@cloud</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:cloud</span>]&#x000A;       <span class="ruby-ivar">@keypair</span> = <span class="ruby-ivar">@cloud</span>.<span class="ruby-identifier">keypair</span>&#x000A;       <span class="ruby-ivar">@run_count</span> = <span class="ruby-value">0</span>&#x000A;       &#x000A;       <span class="ruby-ivar">@cloud</span>.<span class="ruby-identifier">call_before_configure_callbacks</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@cloud</span>&#x000A;       <span class="ruby-identifier">prescribe_configuration</span>&#x000A;       <span class="ruby-identifier">execute!</span>&#x000A;     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000222-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/dr_configure.rb, line 36</span>&#x000A;     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">opts</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>).<span class="ruby-identifier">to_instance_variables</span>(<span class="ruby-keyword kw">self</span>)&#x000A;       <span class="ruby-ivar">@target_host</span> = <span class="ruby-identifier">host</span>&#x000A;       <span class="ruby-ivar">@configurator</span> = <span class="ruby-node">&quot;::PoolParty::Provision::#{dependency_resolver.capitalize}&quot;</span>.<span class="ruby-identifier">constantize</span>&#x000A;       <span class="ruby-ivar">@cloud</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:cloud</span>]&#x000A;       <span class="ruby-ivar">@keypair</span> = <span class="ruby-ivar">@cloud</span>.<span class="ruby-identifier">keypair</span>&#x000A;       <span class="ruby-ivar">@run_count</span> = <span class="ruby-value">0</span>&#x000A;       &#x000A;       <span class="ruby-ivar">@cloud</span>.<span class="ruby-identifier">call_before_configure_callbacks</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@cloud</span>&#x000A;       <span class="ruby-identifier">prescribe_configuration</span>&#x000A;       <span class="ruby-identifier">execute!</span>&#x000A;     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000240'>
-                <a name='M000240'>      </a>
+              <div class='public-instance method' id='method-M000221'>
+                <a name='M000221'>      </a>
                 <div class='synopsis'>
                   <span class='name'>method_missing</span>
                   <span class='arguments'>(m,*a,&amp;block)</span>
@@ -126,10 +126,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000240-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000221-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000240-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/dr_configure.rb, line 24</span>&#x000A;     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">m</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">m</span>) &#x000A;         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>[<span class="ruby-identifier">m</span>]&#x000A;       <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@cloud</span>&#x000A;         <span class="ruby-ivar">@cloud</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">a</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>&#x000A;       <span class="ruby-keyword kw">else</span>&#x000A;         <span class="ruby-keyword kw">super</span>&#x000A;       <span class="ruby-keyword kw">end</span>&#x000A;     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000221-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/dr_configure.rb, line 24</span>&#x000A;     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">m</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">m</span>) &#x000A;         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>[<span class="ruby-identifier">m</span>]&#x000A;       <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@cloud</span>&#x000A;         <span class="ruby-ivar">@cloud</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">a</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>&#x000A;       <span class="ruby-keyword kw">else</span>&#x000A;         <span class="ruby-keyword kw">super</span>&#x000A;       <span class="ruby-keyword kw">end</span>&#x000A;     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

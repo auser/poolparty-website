@@ -45,11 +45,11 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000054">new</a></li>
+              <li><a href="#M000051">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000055">to_hash</a></li>
+              <li><a href="#M000052">to_hash</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -67,31 +67,31 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000054'>
-                <a name='M000054'>      </a>
+              <div class='public-class method' id='method-M000051'>
+                <a name='M000051'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>(h)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000054-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000051-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000054-source'><span class="ruby-comment cmt"># File lib/poolparty/core/my_open_struct.rb, line 7</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">h</span>)&#x000A;    <span class="ruby-ivar">@keys</span> = <span class="ruby-identifier">h</span>.<span class="ruby-identifier">keys</span>&#x000A;    <span class="ruby-keyword kw">super</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000051-source'><span class="ruby-comment cmt"># File lib/poolparty/core/my_open_struct.rb, line 7</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">h</span>)&#x000A;    <span class="ruby-ivar">@keys</span> = <span class="ruby-identifier">h</span>.<span class="ruby-identifier">keys</span>&#x000A;    <span class="ruby-keyword kw">super</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000055'>
-                <a name='M000055'>      </a>
+              <div class='public-instance method' id='method-M000052'>
+                <a name='M000052'>      </a>
                 <div class='synopsis'>
                   <span class='name'>to_hash</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000055-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000052-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000055-source'><span class="ruby-comment cmt"># File lib/poolparty/core/my_open_struct.rb, line 11</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>&#x000A;    <span class="ruby-identifier">m</span> = {}&#x000A;    <span class="ruby-ivar">@keys</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>&#x000A;      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">update</span>( {<span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">key</span>)} )&#x000A;    <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-identifier">m</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000052-source'><span class="ruby-comment cmt"># File lib/poolparty/core/my_open_struct.rb, line 11</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>&#x000A;    <span class="ruby-identifier">m</span> = {}&#x000A;    <span class="ruby-ivar">@keys</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>&#x000A;      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">update</span>( {<span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">key</span>)} )&#x000A;    <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-identifier">m</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

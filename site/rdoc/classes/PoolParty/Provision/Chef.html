@@ -45,37 +45,37 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000242">commands</a></li>
-              <li><a href="#M000243">files_to_upload</a></li>
+              <li><a href="#M000223">commands</a></li>
+              <li><a href="#M000224">files_to_upload</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000242'>
-                <a name='M000242'>      </a>
+              <div class='public-class method' id='method-M000223'>
+                <a name='M000223'>      </a>
                 <div class='synopsis'>
                   <span class='name'>commands</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000242-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000223-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000242-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/chef.rb, line 5</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">commands</span>&#x000A;        <span class="ruby-identifier">debug_flag</span> = <span class="ruby-value str">&quot;-l debug&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">debugging?</span> &#x000A;        [&#x000A;          <span class="ruby-value str">&quot;mkdir -p /etc/chef/cookbooks /etc/chef/cache&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp -R /var/poolparty/dr_configure/chef/cookbooks/* /etc/chef/cookbooks&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/chef/solo.rb /etc/chef/solo.rb&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/chef/dna.json /etc/chef/dna.json&quot;</span>,&#x000A;          <span class="ruby-node">&quot;/usr/bin/chef-solo #{debug_flag} -c /etc/chef/solo.rb -j /etc/chef/dna.json&quot;</span>&#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000223-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/chef.rb, line 5</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">commands</span>&#x000A;        <span class="ruby-identifier">debug_flag</span> = <span class="ruby-value str">&quot;-l debug&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">debugging?</span> &#x000A;        [&#x000A;          <span class="ruby-value str">&quot;mkdir -p /etc/chef/cookbooks /etc/chef/cache&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp -R /var/poolparty/dr_configure/chef/cookbooks/* /etc/chef/cookbooks&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/chef/solo.rb /etc/chef/solo.rb&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/chef/dna.json /etc/chef/dna.json&quot;</span>,&#x000A;          <span class="ruby-node">&quot;/usr/bin/chef-solo #{debug_flag} -c /etc/chef/solo.rb -j /etc/chef/dna.json&quot;</span>&#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000243'>
-                <a name='M000243'>      </a>
+              <div class='public-class method' id='method-M000224'>
+                <a name='M000224'>      </a>
                 <div class='synopsis'>
                   <span class='name'>files_to_upload</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000243-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000224-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000243-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/chef.rb, line 15</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">files_to_upload</span>&#x000A;        [ &#x000A;          <span class="ruby-node">&quot;#{Default.tmp_path}/dr_configure/chef/solo.rb&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{Default.tmp_path}/dr_configure/chef/dna.json&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{Default.base_config_directory}/chef/solo.rb&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{Default.base_config_directory}/chef/dna.json&quot;</span>&#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000224-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/chef.rb, line 15</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">files_to_upload</span>&#x000A;        [ &#x000A;          <span class="ruby-node">&quot;#{Default.tmp_path}/dr_configure/chef/solo.rb&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{Default.tmp_path}/dr_configure/chef/dna.json&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{Default.base_config_directory}/chef/solo.rb&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{Default.base_config_directory}/chef/dna.json&quot;</span>&#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

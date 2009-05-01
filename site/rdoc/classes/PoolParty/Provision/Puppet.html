@@ -45,37 +45,37 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000237">commands</a></li>
-              <li><a href="#M000238">files_to_upload</a></li>
+              <li><a href="#M000218">commands</a></li>
+              <li><a href="#M000219">files_to_upload</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000237'>
-                <a name='M000237'>      </a>
+              <div class='public-class method' id='method-M000218'>
+                <a name='M000218'>      </a>
                 <div class='synopsis'>
                   <span class='name'>commands</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000237-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000218-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000237-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/puppet.rb, line 5</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">commands</span>&#x000A;        [&#x000A;          <span class="ruby-value str">&quot;mkdir -p /etc/puppet/manifests/classes&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;mkdir -p /var/puppet&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/site.pp  /etc/puppet/manifests/site.pp&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;ruby /var/poolparty/dr_configure/add_puppet_to_hosts&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/puppet.conf /etc/puppet/&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/site.pp /etc/puppet/manifests/&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/poolparty.pp /etc/puppet/manifests/classes&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/puppetrunner /usr/bin/&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;/usr/bin/puppetrunner&quot;</span>&#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000218-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/puppet.rb, line 5</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">commands</span>&#x000A;        [&#x000A;          <span class="ruby-value str">&quot;mkdir -p /etc/puppet/manifests/classes&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;mkdir -p /var/puppet&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/site.pp  /etc/puppet/manifests/site.pp&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;ruby /var/poolparty/dr_configure/add_puppet_to_hosts&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/puppet.conf /etc/puppet/&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/site.pp /etc/puppet/manifests/&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/poolparty.pp /etc/puppet/manifests/classes&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;cp /var/poolparty/dr_configure/puppetrunner /usr/bin/&quot;</span>,&#x000A;          <span class="ruby-value str">&quot;/usr/bin/puppetrunner&quot;</span>&#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000238'>
-                <a name='M000238'>      </a>
+              <div class='public-class method' id='method-M000219'>
+                <a name='M000219'>      </a>
                 <div class='synopsis'>
                   <span class='name'>files_to_upload</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000238-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000219-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000238-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/puppet.rb, line 18</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">files_to_upload</span>&#x000A;        [ <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/add_puppet_to_hosts&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/puppet.conf&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/puppetrunner&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/site.pp&quot;</span> &#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000219-source'><span class="ruby-comment cmt"># File lib/poolparty/provision/configurations/puppet.rb, line 18</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">files_to_upload</span>&#x000A;        [ <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/add_puppet_to_hosts&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/puppet.conf&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/puppetrunner&quot;</span>,&#x000A;          <span class="ruby-node">&quot;#{::File.dirname(__FILE__)}/../../templates/puppet/site.pp&quot;</span> &#x000A;        ]&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

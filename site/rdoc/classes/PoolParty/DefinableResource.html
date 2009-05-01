@@ -41,15 +41,15 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000212">define_resource</a></li>
-              <li><a href="#M000213">virtual_resource</a></li>
+              <li><a href="#M000200">define_resource</a></li>
+              <li><a href="#M000201">virtual_resource</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000212'>
-                <a name='M000212'>      </a>
+              <div class='public-instance method' id='method-M000200'>
+                <a name='M000200'>      </a>
                 <div class='synopsis'>
                   <span class='name'>define_resource</span>
                   <span class='arguments'>(name, &amp;block)</span>
@@ -61,7 +61,7 @@
                   work Example:
                   </p>
                   <p>
-                  <a href="DefinableResource.html#M000212">define_resource</a>(:line_in_file)
+                  <a href="DefinableResource.html#M000200">define_resource</a>(:line_in_file)
                   do end
                   </p>
                   <p>
@@ -77,14 +77,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000212-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000200-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000212-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/definable_resource.rb, line 18</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_resource</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">new_resource_class</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000200-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/definable_resource.rb, line 18</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_resource</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">new_resource_class</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000213'>
-                <a name='M000213'>      </a>
+              <div class='public-instance method' id='method-M000201'>
+                <a name='M000201'>      </a>
                 <div class='synopsis'>
                   <span class='name'>virtual_resource</span>
                   <span class='arguments'>(name=:virtual_resource, opts={}, &amp;block)</span>
@@ -95,7 +95,7 @@
                   virtual resource against the Resource class Example:
                   </p>
                   <p>
-                  <a href="DefinableResource.html#M000213">virtual_resource</a>(:virtualhost)
+                  <a href="DefinableResource.html#M000201">virtual_resource</a>(:virtualhost)
                   do end
                   </p>
                   <p>
@@ -118,10 +118,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000213-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000201-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000213-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/definable_resource.rb, line 43</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">virtual_resource</span>(<span class="ruby-identifier">name</span>=<span class="ruby-identifier">:virtual_resource</span>, <span class="ruby-identifier">opts</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">symc</span> = <span class="ruby-node">&quot;#{name}&quot;</span>.<span class="ruby-identifier">top_level_class</span>.<span class="ruby-identifier">camelcase</span>&#x000A;      <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">symc</span>.<span class="ruby-identifier">class_constant</span>(<span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span>, {<span class="ruby-identifier">:preserve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      &#x000A;      <span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">add_has_and_does_not_have_methods_for</span>(<span class="ruby-identifier">symc</span>)&#x000A;      &#x000A;      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>&#x000A;      <span class="ruby-identifier">klass</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000201-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/definable_resource.rb, line 43</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">virtual_resource</span>(<span class="ruby-identifier">name</span>=<span class="ruby-identifier">:virtual_resource</span>, <span class="ruby-identifier">opts</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-identifier">symc</span> = <span class="ruby-node">&quot;#{name}&quot;</span>.<span class="ruby-identifier">top_level_class</span>.<span class="ruby-identifier">camelcase</span>&#x000A;      <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">symc</span>.<span class="ruby-identifier">class_constant</span>(<span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span>, {<span class="ruby-identifier">:preserve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      &#x000A;      <span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">add_has_and_does_not_have_methods_for</span>(<span class="ruby-identifier">symc</span>)&#x000A;      &#x000A;      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>&#x000A;      <span class="ruby-identifier">klass</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

@@ -54,11 +54,11 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000015">new</a></li>
+              <li><a href="#M000013">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000016">compile</a></li>
+              <li><a href="#M000014">compile</a></li>
             </ol>
           </div>
           <div id='context'>
@@ -72,31 +72,31 @@
           <div id='section'>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000015'>
-                <a name='M000015'>      </a>
+              <div class='public-class method' id='method-M000013'>
+                <a name='M000013'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>(o={})</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000015-source'><span class="ruby-comment cmt"># File lib/poolparty/net/remoter_bases/vmrun/utilities/vmx.rb, line 21</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">o</span>={})&#x000A;    <span class="ruby-identifier">dsl_options</span> <span class="ruby-identifier">o</span>&#x000A;    <span class="ruby-ivar">@vmx_file</span> = <span class="ruby-constant">VmxFile</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">o</span>&#x000A;    <span class="ruby-ivar">@vmx_disk</span> = <span class="ruby-constant">VmxDisk</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">o</span>    &#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000013-source'><span class="ruby-comment cmt"># File lib/poolparty/net/remoter_bases/vmrun/utilities/vmx.rb, line 21</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">o</span>={})&#x000A;    <span class="ruby-identifier">dsl_options</span> <span class="ruby-identifier">o</span>&#x000A;    <span class="ruby-ivar">@vmx_file</span> = <span class="ruby-constant">VmxFile</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">o</span>&#x000A;    <span class="ruby-ivar">@vmx_disk</span> = <span class="ruby-constant">VmxDisk</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">o</span>    &#x000A;  <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000016'>
-                <a name='M000016'>      </a>
+              <div class='public-instance method' id='method-M000014'>
+                <a name='M000014'>      </a>
                 <div class='synopsis'>
                   <span class='name'>compile</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000016-source'><span class="ruby-comment cmt"># File lib/poolparty/net/remoter_bases/vmrun/utilities/vmx.rb, line 27</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>&#x000A;    <span class="ruby-operator">::</span><span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-node">&quot;#{base_directory}/#{options[:name]}&quot;</span>&#x000A;    <span class="ruby-identifier">vmdk</span> = <span class="ruby-ivar">@vmx_disk</span>.<span class="ruby-identifier">compile</span>&#x000A;    <span class="ruby-ivar">@vmx_file</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value str">&quot;ide0:0.fileName&quot;</span>, <span class="ruby-identifier">vmdk</span>)&#x000A;    <span class="ruby-ivar">@vmx_file</span>.<span class="ruby-identifier">compile</span>    &#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000014-source'><span class="ruby-comment cmt"># File lib/poolparty/net/remoter_bases/vmrun/utilities/vmx.rb, line 27</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>&#x000A;    <span class="ruby-operator">::</span><span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-node">&quot;#{base_directory}/#{options[:name]}&quot;</span>&#x000A;    <span class="ruby-identifier">vmdk</span> = <span class="ruby-ivar">@vmx_disk</span>.<span class="ruby-identifier">compile</span>&#x000A;    <span class="ruby-ivar">@vmx_file</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value str">&quot;ide0:0.fileName&quot;</span>, <span class="ruby-identifier">vmdk</span>)&#x000A;    <span class="ruby-ivar">@vmx_file</span>.<span class="ruby-identifier">compile</span>    &#x000A;  <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

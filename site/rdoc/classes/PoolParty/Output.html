@@ -41,23 +41,23 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000225">output</a></li>
+              <li><a href="#M000206">output</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000225'>
-                <a name='M000225'>      </a>
+              <div class='public-instance method' id='method-M000206'>
+                <a name='M000206'>      </a>
                 <div class='synopsis'>
                   <span class='name'>output</span>
                   <span class='arguments'>(*args)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000225-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000206-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000225-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/output.rb, line 4</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">output</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;      <span class="ruby-identifier">returning</span> (<span class="ruby-ivar">@output</span> <span class="ruby-operator">||=</span> []) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;          (<span class="ruby-identifier">output</span> <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>        &#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000206-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/output.rb, line 4</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">output</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;      <span class="ruby-identifier">returning</span> (<span class="ruby-ivar">@output</span> <span class="ruby-operator">||=</span> []) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;          (<span class="ruby-identifier">output</span> <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>        &#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

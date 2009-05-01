@@ -45,7 +45,7 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000195">new</a></li>
+              <li><a href="#M000183">new</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -63,17 +63,17 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000195'>
-                <a name='M000195'>      </a>
+              <div class='public-class method' id='method-M000183'>
+                <a name='M000183'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>(name,&amp;block)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000195-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000183-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000195-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/plugin_model.rb, line 18</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)        &#x000A;        <span class="ruby-identifier">symc</span> = <span class="ruby-node">&quot;#{name}&quot;</span>.<span class="ruby-identifier">top_level_class</span>.<span class="ruby-identifier">camelcase</span>&#x000A;        <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">symc</span>.<span class="ruby-identifier">class_constant</span>(<span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span>, {<span class="ruby-identifier">:preserve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;        &#x000A;        <span class="ruby-identifier">lowercase_class_name</span> = <span class="ruby-identifier">symc</span>.<span class="ruby-identifier">downcase</span>&#x000A;        <span class="ruby-comment cmt"># Store the name of the class for pretty printing later</span>&#x000A;        <span class="ruby-comment cmt"># klass.name = name</span>&#x000A;        <span class="ruby-comment cmt"># Add the plugin definition to the cloud as an instance method</span>&#x000A;        <span class="ruby-identifier">meth</span> = <span class="ruby-value str">&quot;def \#{lowercase_class_name}(opts={}, &amp;block)\ni = plugin_store.select {|i| i if i.class == \#{lowercase_class_name.camelcase}Class }.first if plugin_store\nif i\ni\nelse\ninst = \#{lowercase_class_name.camelcase}Class.new(opts, parent, &amp;block)\nplugin_store &lt;&lt; inst if plugin_store\ninst\nend\nend\n&quot;</span>&#x000A;&#x000A;        <span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Cloud</span><span class="ruby-operator">::</span><span class="ruby-constant">Cloud</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-identifier">meth</span>&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000183-source'><span class="ruby-comment cmt"># File lib/poolparty/poolparty/plugin_model.rb, line 18</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)        &#x000A;        <span class="ruby-identifier">symc</span> = <span class="ruby-node">&quot;#{name}&quot;</span>.<span class="ruby-identifier">top_level_class</span>.<span class="ruby-identifier">camelcase</span>&#x000A;        <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">symc</span>.<span class="ruby-identifier">class_constant</span>(<span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugin</span>, {<span class="ruby-identifier">:preserve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;        &#x000A;        <span class="ruby-identifier">lowercase_class_name</span> = <span class="ruby-identifier">symc</span>.<span class="ruby-identifier">downcase</span>&#x000A;        <span class="ruby-comment cmt"># Store the name of the class for pretty printing later</span>&#x000A;        <span class="ruby-comment cmt"># klass.name = name</span>&#x000A;        <span class="ruby-comment cmt"># Add the plugin definition to the cloud as an instance method</span>&#x000A;        <span class="ruby-identifier">meth</span> = <span class="ruby-value str">&quot;def \#{lowercase_class_name}(opts={}, &amp;block)\ni = plugin_store.select {|i| i if i.class == \#{lowercase_class_name.camelcase}Class }.first if plugin_store\nif i\ni\nelse\ninst = \#{lowercase_class_name.camelcase}Class.new(opts, parent, &amp;block)\nplugin_store &lt;&lt; inst if plugin_store\ninst\nend\nend\n&quot;</span>&#x000A;&#x000A;        <span class="ruby-constant">PoolParty</span><span class="ruby-operator">::</span><span class="ruby-constant">Cloud</span><span class="ruby-operator">::</span><span class="ruby-constant">Cloud</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-identifier">meth</span>&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

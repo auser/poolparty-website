@@ -41,14 +41,14 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000232">ping_port</a></li>
+              <li><a href="#M000213">ping_port</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000232'>
-                <a name='M000232'>      </a>
+              <div class='public-instance method' id='method-M000213'>
+                <a name='M000213'>      </a>
                 <div class='synopsis'>
                   <span class='name'>ping_port</span>
                   <span class='arguments'>(host, port=22, retry_times=400)</span>
@@ -59,10 +59,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000232-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000213-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000232-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/pinger.rb, line 6</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ping_port</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>=<span class="ruby-value">22</span>, <span class="ruby-identifier">retry_times</span>=<span class="ruby-value">400</span>)&#x000A;        <span class="ruby-identifier">connected</span> = <span class="ruby-keyword kw">false</span>&#x000A;        <span class="ruby-identifier">retry_times</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-keyword kw">begin</span>&#x000A;            <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">connected</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">TCPSocket</span>)&#x000A;          <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>&#x000A;            <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)&#x000A;          <span class="ruby-keyword kw">end</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;        <span class="ruby-identifier">connected</span>&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000213-source'><span class="ruby-comment cmt"># File lib/poolparty/modules/pinger.rb, line 6</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ping_port</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>=<span class="ruby-value">22</span>, <span class="ruby-identifier">retry_times</span>=<span class="ruby-value">400</span>)&#x000A;        <span class="ruby-identifier">connected</span> = <span class="ruby-keyword kw">false</span>&#x000A;        <span class="ruby-identifier">retry_times</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-keyword kw">begin</span>&#x000A;            <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">connected</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">TCPSocket</span>)&#x000A;          <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>&#x000A;            <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)&#x000A;          <span class="ruby-keyword kw">end</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;        <span class="ruby-identifier">connected</span>&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
