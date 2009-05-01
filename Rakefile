@@ -16,6 +16,7 @@ namespace :publish do
     %w{POOLPARTY_SRC POOLPARTY_WEB}.each {|env| raise "#{env} required." unless ENV[env]}
     cmds =<<-EOCMD 
 pushd $POOLPARTY_SRC &&
+git checkout master &&
 rake rerdoc &&
 rsync -av $POOLPARTY_SRC/rdoc $POOLPARTY_WEB/site/ &&
 rm -rf rdoc/*
