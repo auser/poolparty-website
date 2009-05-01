@@ -147,18 +147,6 @@
     %li
       8642
   %p
-    Old ports
-    %strong
-      not
-    required for release 1.1 and after
-  %ol
-    %li
-      4369 (erlang daemon)
-    %li
-      8140 (puppet)
-    %li
-      7050 (cloud management)
-  %p
     If these ports aren't open, your cloud will fail.
   %pre
     %code
@@ -171,6 +159,25 @@
     %code
       ec2-authorize -P icmp -t -1:-1 default
   %p
+    Also, if you plan on using apache, you'll want port 80 to be open:
+    %br
+  %pre
+    %code
+      ec2-authorize -p 80 default
+
+  %p
+    Old ports
+    %strong
+      not
+    required for release 1.1 and after
+  %ol
+    %li
+      4369 (erlang daemon)
+    %li
+      8140 (puppet)
+    %li
+      7050 (cloud management)
+
 
   %h2 clouds.rb file location
 
