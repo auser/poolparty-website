@@ -19,12 +19,17 @@ pushd $POOLPARTY_SRC &&
 git checkout master &&
 rake rerdoc &&
 rsync -av $POOLPARTY_SRC/rdoc $POOLPARTY_WEB/site/ &&
-rm -rf rdoc/*
+rm -rf rdoc/* && 
 git checkout gh-pages &&
 pushd $POOLPARTY_WEB &&
 # find $POOLPARTY_WEB/site -type f -name '*.html' -exec rm {} ";" && 
 staticmatic build . &&
 rsync -av $POOLPARTY_WEB/site/ $POOLPARTY_SRC &&
+git add site && 
+git commit -m "updated site on #{Time.now} via rake"
+pushd $POOLPARTY_SRC &&
+# add everything not in the gitignores
+popd &&
 popd &&
 popd
 EOCMD
