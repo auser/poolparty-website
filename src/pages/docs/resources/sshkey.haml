@@ -1,18 +1,22 @@
-.small.right
-  =link "/lib/Resources"
-%h3 Ssh Key
+=begin rdoc
+
+== Ssh Key
 
 The sshkey resource specifies an ssh key that should be distributed on all the nodes
 
-%h3 Usage
+== Usage
 
-~code_to_syntax("has_sshkey(:key => '...') do\n\t# More options. \n\t# This block is optional\nend")
+  has_sshkey(:key => '...') do
+    # More options. 
+    # This block is optional
+  end
 
-%h3 Options
-%dd
-  ~option_entry("key", "The key content for the ssh key")
-  ~option_entry("target", "The location of the ssh key")
+== Options
 
-%h3 Examples
+* <tt>key</tt> The key content for the ssh key
+* <tt>target</tt> The location of the ssh key
 
-~code_to_syntax("has_sshkey(:key => \"ABIGLONGSTRINGOFDIGETS\", :target => \"/root/.ssh/key_file\")")
+== Examples
+
+  has_sshkey(:key => "ABIGLONGSTRINGOFDIGETS", :target => "/root/.ssh/key_file")
+=end

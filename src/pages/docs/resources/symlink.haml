@@ -1,18 +1,22 @@
-.small.right
-  =link "/lib/Resources"
-%h3 Symlink
+=begin rdoc
+
+== Symlink
 
 The symlink resource sets a symlink 
 
-%h3 Usage
+== Usage
 
-~code_to_syntax("has_symlink(:key => '...') do\n\t# More options. \n\t# This block is optional\nend")
+  has_symlink(:key => '...') do
+    # More options. 
+    # This block is optional
+  end
 
-%h3 Options
-%dd
-  ~option_entry("Name", "The location of the symlink")
-  ~option_entry("target", "The source of the symlink, the existing file or directory")
+== Options
 
-%h3 Examples
+* <tt>name</tt> The location of the symlink
+* <tt>target</tt> The source of the symlink, the existing file or directory
 
-~code_to_syntax("has_symlink(:name => \"/var/www/poolpartyrb.com/public\", :source => \"/var/www/poolpartyrb.com/poolparty-website/site\")")
+== Examples
+
+  has_symlink(:name => "/var/www/poolpartyrb.com/public", :source => "/var/www/poolpartyrb.com/poolparty-website/site")
+=end
