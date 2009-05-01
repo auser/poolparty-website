@@ -187,6 +187,7 @@ module NavigationHelper
       # make actually relative
       href = page.relative
       href = href.gsub(/^\//, '') if href.size > 1 && href =~ /^\//
+      href = href + ".html" unless href =~ /\/$/
       tag(:a, :href => "#{href}"){page.link}
     end
   end
