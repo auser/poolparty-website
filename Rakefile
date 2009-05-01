@@ -18,6 +18,7 @@ namespace :publish do
 pushd $POOLPARTY_SRC &&
 rake rerdoc &&
 rsync -av $POOLPARTY_SRC/rdoc $POOLPARTY_WEB/site/ &&
+rm -rf rdoc/*
 git checkout gh-pages &&
 pushd $POOLPARTY_WEB &&
 staticmatic build . &&
