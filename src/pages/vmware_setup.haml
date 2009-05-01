@@ -33,7 +33,9 @@
 
       %p
         For example:
-        ~code_to_syntax "scp ~/.ssh/id_rsa.pub root@local_vmware_ip:/root/.ssh/authorized_keys"
+
+        :syntaxhighlighter
+          scp ~/.ssh/id_rsa.pub root@local_vmware_ip:/root/.ssh/authorized_keys
 
       %p 
         Then 
@@ -59,7 +61,9 @@
       %p
         For example, using VMware Fusion on Mac OSX add the following to your 
         %tt .profile
-        ~code_to_syntax "export PATH=$PATH:/Library/Application\ Support/VMware\ Fusion"
+        :syntaxhighlighter
+          #!highlighting syntax=shell-unix-generic
+          export PATH=$PATH:/Library/Application\ Support/VMware\ Fusion
 
     %li
       %p
@@ -67,18 +71,27 @@
         %tt clouds.rb
 
         %p
-          %em
-            todo: inline block below is ugly
 
-        :ruby
-          haml_concat code_to_syntax(<<-eos)
+        :syntaxhighlighter
+          clouds(:app) do
+            # ...
             using :vmrun do
-          \ \  vmx_hash({
-              "/Users/alerner/Documents/Virtual Machines.localized/one.vmwarevm/Ubuntu Linux 32bit.vmx" => "192.168.248.128"
-            })
+              vmx_hash({
+                "/Users/alerner/Documents/Virtual Machines.localized/one.vmwarevm/Ubuntu Linux 32bit.vmx" => "192.168.248.128"
+              })
+            # ...
+            end
           end
-          eos
 
     %li 
       %p
-        %tt cloud-start
+        :syntaxhighlighter
+          cloud start -d
+
+      %p 
+        Note: if you receive the message 
+        %tt Your cloud is already running.
+        That is probably because you already have VMware or possibly your image running. In this case simply
+        %tt cloud provision 
+        to provision your instances.
+

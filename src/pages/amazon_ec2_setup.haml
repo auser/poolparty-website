@@ -120,7 +120,15 @@
     %br
   %pre
     %code
-      todo - put in cmds for keypair generation
+      ec2-add-keypair poolparty-examples > ~/.ssh/poolparty-examples
+      chmod 600 ~/.ssh/poolparty-examples
+    
+  (Hint, this means you will add the following directive to your
+  %tt clouds.rb)
+
+  :syntaxhighlighter
+    keypair "poolparty-examples"
+
   %p
 
   %h3 Ports
@@ -197,4 +205,11 @@
   %p
     Note, that if you are in the same directory as your clouds.rb file, then PoolParty will assume you are working with that file.
 
+  %h3 External links
 
+  %p
+    %ul
+      %li
+        =link "AWS Getting Started Guide", "http://docs.amazonwebservices.com/AWSEC2/latest/GettingStartedGuide/"
+      %li
+        =link "AWS Documentation", "http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=84"
