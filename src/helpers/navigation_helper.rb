@@ -184,7 +184,10 @@ module NavigationHelper
     if CURRENT_AS_SPAN and page.is_current?
       tag(:span){ page.link }
     else
-      tag(:a, :href => "#{page.relative}"){page.link}
+      # make actually relative
+      href = page.relative
+      href = href.gsub(/^\//, '') if href.size > 1 && href =~ /^\//
+      tag(:a, :href => "#{href}"){page.link}
     end
   end
   
