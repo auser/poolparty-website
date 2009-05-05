@@ -41,20 +41,25 @@
   %a{:href => "http://wiki.github.com/auser/poolparty/installing"} this page 
   for instructions on development installation
 %p.step 
-  ~code_to_syntax("gem install --source http://gems.github.com auser-poolparty")
+  :syntaxhighlighter
+    #!highlighting syntax=shell-unix-generic
+      gem install --source http://gems.github.com auser-poolparty
 
 %h2 
-  2. Create 
-  %tt clouds.rb
+  2. Run the installer
 
 %p.step 
-  The quickest way to be up and running is to clone our example project.
-  ~code_to_syntax("git clone git://github.com/auser/poolparty-examples.git ~/Desktop/poolparty-examples")
+  Now run the PoolParty installer
+  :syntaxhighlighter
+    #!highlighting syntax=shell-unix-generic
+      install-poolparty
 
 %h2
   3. Start your cloud!
 %p.step
-  ~code_to_syntax("cd ~/Desktop/poolparty-examples/simple && cloud start -d")
+  :syntaxhighlighter
+    #!highlighting syntax=shell-unix-generic
+      cloud start -v
 
 %h2
   What next?
