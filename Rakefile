@@ -30,7 +30,6 @@ git commit -m "updated site on #{Time.now} via rake"
 pushd $POOLPARTY_SRC &&
 # add everything not in the gitignores
 popd &&
-popd &&
 popd
 EOCMD
     # cmds.split(/\n/).each{|cmd| puts sh(cmd, :verbose => true)}
