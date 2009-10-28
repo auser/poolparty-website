@@ -74,13 +74,9 @@
       environment variables
     %ul
       %li
-        %tt AWS_ACCESS_KEY
+        %tt EC2_ACCESS_KEY
       %li
-        %tt AWS_SECRET_ACCESS_KEY
-      %li
-        %tt EC2_PRIVATE_KEY
-      %li
-        %tt EC2_CERT
+        %tt EC2_SECRET_KEY
     %p
       for your
       %span.caps
@@ -101,8 +97,8 @@
     %pre
       %code
         \#!/bin/sh
-        export AWS_ACCESS_KEY="AAAAAAAAAABBBBBB"
-        export AWS_SECRET_ACCESS_KEY="NRLSKDM@$@$/4@$%%NNNSN"
+        export EC2_ACCESS_KEY="AAAAAAAAAABBBBBB"
+        export EC2_SECRET_KEY="NRLSKDM@$@$/4@$%%NNNSN"
         export EC2_PRIVATE_KEY="/path/to/pk-XXX.pem"
         export EC2_CERT="/path/to/cert-XXX.pem"
     %p
@@ -116,101 +112,43 @@
   %h3
     Keypair
   %p
-    If you haven't done so already, generate the keypair
+    Keypairs are generated automatically for you if your keypair does not exist. The naming
+    convention is in the format: 
     %br
-  %pre
-    %code
-      ec2-add-keypair poolparty-example > ~/.ssh/poolparty-example
-      chmod 600 ~/.ssh/poolparty-example
-    
-  (Hint, this means you will add the following directive to your
-  %tt clouds.rb)
-
   :syntaxhighlighter
-    keypair "poolparty-example"
+      [poolname]-[cloudname]
 
+  %h3
+    Security groups
   %p
-
-  %h3 Ports
-  =tip_box do
-    Wondering why do you have to open these ports? No idea what a 'security group' is? Checkout the 
-    =link "Amazon EC2 Foundations", "amazon.html"
-    page
-
-  %p
-    Finally, make sure the following ports are open in your 
-    =link "EC2 security group:", "amazon.html#security_groups"
+    Security groups are how the clouds distinguish each other. You can specify security groups in your clouds.rb in the format:
+    :syntaxhighlighter
+      security_group do
+        authorize :from_port => 22, :to_port => 22
+      end
+      
+    PoolParty will take care of ensuring this security group with the specified ports open as well as it will close the ports that are open that are not specified to keep the security groups
+    %span.emphasis declarative.
     
-  %ol
-    %li
-      22
-    %li
-      8642
-  %p
-    If these ports aren't open, your cloud will fail.
-  %pre
-    %code
-      ec2-authorize -p 22 default
-      ec2-authorize -p 8642 default
-  %p
-    Sometimes it's nice to ping your machine, but ping doesn't need to be open, so this step is optional:
-    %br
-  %pre
-    %code
-      ec2-authorize -P icmp -t -1:-1 default
-  %p
-    Also, if you plan on using apache, you'll want port 80 to be open:
-    %br
-  %pre
-    %code
-      ec2-authorize -p 80 default
-
-  %p
-    Old ports
-    %strong
-      not
-    required for release 1.1 and after
-  %ol
-    %li
-      4369 (erlang daemon)
-    %li
-      8140 (puppet)
-    %li
-      7050 (cloud management)
-
-
+    You can also provide a name for the security groups:
+    :syntaxhighlighter
+      security_group "my-custom-named-security-group" do
+        authorize :from_port => 22, :to_port => 22
+      end
+  
+  %p.emphasis
+    Note, to use the anything command that requires ssh access, you must allow port 22 to be opened in your security_group declaration.
+    
   %h2 clouds.rb file location
 
   %p
-    If you are going to point to one clouds.rb file more often than any other, you can add it as an environment variable as well, like so
-    %br
-  %pre
-    %code
-      export POOL_SPEC=/home/auser/Sites/pp/clouds.rb
+    Your clouds.rb must be accessible to the command-line. It will try to require the clouds.rb from the current working directory if the clouds.rb is in the current directory. If it is not, you can specify the location with the -c switch with any cloud command.
+    :syntaxhighlighter
+      cloud show -c examples/simple.rb
   %p
-  %p
-    This will save a lot of headache if you export this in the file. PoolParty expects to be able to find the clouds.rb in one of several locations. 
-
-  %ol
-    %li 
-      the current directory
-    %li 
-      the file pointed to by the 
-      %tt POOL_SPEC 
-      environment variable 
-    %li 
-      %tt ~/.poolparty/clouds.rb
-    %li 
-      %tt /etc/poolparty/clouds.rb 
-
-  You can also explicitly set these when calling 
-  %tt pool 
-  commands with the 
-  %tt -n 
-  switch, but that gets old fast.
-
-  %p
-    Note, that if you are in the same directory as your clouds.rb file, then PoolParty will assume you are working with that file.
+    The clouds.rb is also "requireable" from ruby, so you can operate with the cloud from irb or any other ruby program, i.e.: 
+    :syntaxhighlighter
+      irb -r poolparty/clouds.rb
 
   %h3 External links
 

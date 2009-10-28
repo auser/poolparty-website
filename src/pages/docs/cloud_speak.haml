@@ -4,27 +4,20 @@
 
 %h2 Cloud
 %p
-  All of the cloud binaries are labeled with 
-%p
-  ="-n [name of the cloud]"
+  All of the cloud binaries have the following switches available
+  :syntaxhighlighter
+    -n [name of the cloud]
+    -c [path/to/clouds.rb]
+    -h
 .binary_list
   %ul
     ~binary_entry "List", "List the current running and pending instances for the cloud"
     ~binary_entry "Start", "Start the cloud"
     ~binary_entry "Ssh", "Ssh into the cloud (specify the node with -i [defaults to the master 0])"
     ~binary_entry "Terminate", "Terminate the cloud"
-    ~binary_entry "Refresh", "Reconfigure the cloud quickly. Useful if you want the cloud to refresh from the configuration"
-    ~binary_entry "Provision", "Provision the cloud. When you make a change to your manifest, use this to push the changes to the cloud"
-    ~binary_entry "Osxcopy", "Copy the master ip to the pasteboard (on osx)"
-    ~binary_entry "Maintain", "Run the maintenance script to ensure the cloud is maintaining status"
     ~binary_entry "Expand", "Expands the cloud if it can expand"
     ~binary_entry "Contract", "Contract the cloud if it can contract"
     ~binary_entry "Configure", "Configure the cloud"
-    ~binary_entry "Add-keypair", "Helper method to create a new keypair for the instances"
-%h2 Pool
-.binary_list
-  %ul
-    ~binary_entry "Console", "PoolParty console (useful for testing)"
-    ~binary_entry "Describe", "Describe the pool"
-    ~binary_entry "List", "List the pools"
-    ~binary_entry "Spec", "Spec generator"
+    ~binary_entry "Console", "Give an irb console with the clouds.rb loaded"
+    ~binary_entry "Reboot", "Restart each node in the cloud (one-by-one) to refresh the user-data and the nodes"
+    ~binary_entry "Show", "Describe the cloud setup"

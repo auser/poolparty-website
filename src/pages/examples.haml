@@ -1,9 +1,31 @@
 %h2 Examples
-%p 
-  We've created a git repo containing a number of working and tested examples:
-  =link "http://github.com/auser/poolparty-examples/tree/master", "http://github.com/auser/poolparty-examples/tree/master"
+
+/ %p
+/   Example:
+/   ~file_to_code("basic.rb")
 
 %p
-  Example:
-  %script{:src=>"http://gist.github.com/69121.js"}
-  -# ~file_to_code("basic_apache.rb")
+  :syntaxhighlighter
+    pool "my_twitter" do  
+      cloud "app" do
+        using :ec2
+        instances 1..4
+        image_id "ami-ccf615a5" #alestic jaunty
+        availability_zones ['us-east-1c']
+        security_group do
+          %w(22 80).each {|port|  authorize :from_port => port, :to_port => port}
+        end
+        autoscale
+      end
+      
+      cloud "database" do
+        using :ec2
+        instances 1..4
+        image_id "ami-ccf615a5" #alestic jaunty
+        availability_zones ['us-east-1a']
+        security_group do
+          %w(22 80).each {|port|  authorize :from_port => port, :to_port => port}
+        end
+      end
+      
+    end

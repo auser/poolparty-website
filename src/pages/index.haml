@@ -4,36 +4,32 @@
       Cloud management. 
       %span Simplified.
     %p.intro
-      PoolParty is a 
-      %span.emphasis cloud management system. 
-      PoolParty makes it easy 
-      to manage powerful and 
-      %span.emphasis complex deployments 
-      on 
+      PoolParty is a declarative
+      %span.emphasis cloud infrastructure.
+      PoolParty provides an executable
+      description of a
       %span.emphasis cloud computing
-      services such as Amazon EC2.
+      infrastructure in a single file.
 
   .intro-right
-    =img "syntax_sample_2.png"
+    =img "syntax_sample_3.png"
 
 .features
   %h2 Features:
 
   %ul
-    %li built-in scaling, self-healing, monitoring, and load-balancing
-    %li support for VMware, for testing clouds
+    %li Git-style binaries
+    %li support for ec2, load-balancers, autoscalers, security groups
     %li 
-      dependency resolution is based on 
+      dependency resolution support built-in for
       %a{:href => "docs/chef.html"} Chef 
-    %li clear and extensible configuration 
+    %li clear and extensible configuration
 
 %h1 Getting Started
 %h2 0. Pre-flight check
 %p.step 
   Setup 
   =link "Amazon EC2", "amazon_ec2_setup.html" 
-  or 
-  =link "VMware (Fusion)", "vmware_setup.html"
 
 %h2 1. Install PoolParty gem
 =tip_box do
@@ -49,17 +45,30 @@
   2. Run the installer
 
 %p.step 
-  Now run the PoolParty installer
+  Write your clouds.rb
   :syntaxhighlighter
-    #!highlighting syntax=shell-unix-generic
-      install-poolparty
-
+    pool "myapp" do
+      cloud "app" do
+        using :ec2
+        instances 1..1
+        security_group do
+          authorize :from_port => 22, :to_port => 22
+        end
+      end
+    end
 %h2
-  3. Start your cloud!
+  3. View your cloud
 %p.step
   :syntaxhighlighter
     #!highlighting syntax=shell-unix-generic
-      cloud start -v
+      cloud show
+
+%h2
+  4. Start your cloud!
+%p.step
+  :syntaxhighlighter
+    #!highlighting syntax=shell-unix-generic
+      cloud start
 
 %h2
   What next?
